@@ -410,6 +410,7 @@ namespace Northwind.GUI
 			// 
 			// customerIDTextBox
 			// 
+			this.customerIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._customerBindingSource, "CustomerId", true));
 			this.customerIDTextBox.Location = new System.Drawing.Point(108, 21);
 			this.customerIDTextBox.Name = "customerIDTextBox";
 			this.customerIDTextBox.ReadOnly = true;

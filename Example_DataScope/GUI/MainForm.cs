@@ -15,6 +15,7 @@ using SD.LLBLGen.Pro.ORMSupportClasses;
 using SD.LLBLGen.Pro.QuerySpec;
 using SD.LLBLGen.Pro.QuerySpec.Adapter;
 using System.Linq;
+using Northwind.BO;
 
 namespace Northwind.GUI
 {
@@ -62,10 +63,6 @@ namespace Northwind.GUI
 			InitializeComponent();
 			
 			this.MinimumSize = this.Size;
-
-			_customerWithMostOrders = null;
-			_customerWithHighestOrder = null;
-
 			// calculate statistics for northwind and show these in the form.
 			CalculateStatistics();
 		}
@@ -78,64 +75,21 @@ namespace Northwind.GUI
 		/// <remarks>No error checking is applied to this routine, it's for illustrating the framework functionality.</remarks>
 		private void CalculateStatistics()
 		{
-			// get amount customers
-			using(DataAccessAdapter adapter = new DataAccessAdapter())
+			var statistics = new NWStatistics();
+			using(var adapter = new DataAccessAdapter())
 			{
-				int amountCustomers = (int)adapter.GetScalar(CustomerFields.CustomerId, AggregateFunction.CountRow);
-				_amountCustomersTextBox.Text = amountCustomers.ToString();
-
-				// get all order prices
-				var qf = new QueryFactory();
-				var q = qf.Create()
-							.Select(OrderDetailFields.OrderId, (OrderDetailFields.Quantity * OrderDetailFields.UnitPrice).Sum().As("OrderPrice"))
-							.GroupBy(OrderDetailFields.OrderId);
-
-				var orderPrices = adapter.FetchAsDataTable(q);
-
-				// calculate average order price and which customer has the most expensive order
-				decimal averageOrderPrice = 0.0M;
-				decimal highestOrderPrice = 0.0M;
-				int orderIdWithHighestPrice = 0;
-				for (int i = 0; i < orderPrices.Rows.Count; i++)
-				{
-					decimal currentOrderPrice = (decimal)orderPrices.Rows[i]["OrderPrice"];
-					if(currentOrderPrice>highestOrderPrice)
-					{
-						highestOrderPrice=currentOrderPrice;
-						orderIdWithHighestPrice = (int)orderPrices.Rows[i]["OrderId"];
-					}
-					averageOrderPrice+= currentOrderPrice;
-				}
-				averageOrderPrice=averageOrderPrice/orderPrices.Rows.Count;
-				_highestOrderPriceTextBox.Text = highestOrderPrice.ToString("C");
-				_averageOrderPriceTextBox.Text = averageOrderPrice.ToString("C");
-
-				// get order with highest price. Pull customer also in 1 go
-				var prefetchPathCustomer = new PrefetchPath2(EntityType.OrderEntity);
-				prefetchPathCustomer.Add(OrderEntity.PrefetchPathCustomer);
-				OrderEntity highestOrder = new OrderEntity(orderIdWithHighestPrice);
-				adapter.FetchEntity(highestOrder, prefetchPathCustomer);
-				_customerWithHighestOrder = highestOrder.Customer;	// already loaded through prefetch path.
-				_highestOrderCustomerTextBox.Text = _customerWithHighestOrder.CompanyName;
-
-				// get customer with most orders. 
-				var qMaxOrders = qf.Create()
-									.Select(OrderFields.CustomerId,
-											OrderFields.OrderId.Count().As("AmountOrders"))
-									.OrderBy(OrderFields.OrderId.Count().As("AmountOrders").Descending())
-									.GroupBy(OrderFields.CustomerId)
-									.Limit(1);
-
-				// now fetch the list, just 1 row, ordered descending on amount
-				DataTable orderCustomer = adapter.FetchAsDataTable(qMaxOrders);
-				_mostOrdersPerCustomerTextBox.Text = orderCustomer.Rows[0]["AmountOrders"].ToString();
-
-				// we'll assume the data was there, so there is a row.
-				_customerWithMostOrders = new CustomerEntity(orderCustomer.Rows[0]["CustomerId"].ToString());
-				adapter.FetchEntity(_customerWithMostOrders);
-
-				_mostOrdersCustomerTextBox.Text = _customerWithMostOrders.CompanyName;
+				statistics.LoadData(adapter);
+				_customerWithHighestOrder = adapter.FetchNewEntity<CustomerEntity>(
+							new RelationPredicateBucket(CustomerFields.CustomerId==statistics.MaxOrderCustomerCustomerId));
+				_customerWithMostOrders = adapter.FetchNewEntity<CustomerEntity>(
+							new RelationPredicateBucket(CustomerFields.CustomerId==statistics.MostOrdersCustomerCustomerId));
 			}
+			_amountCustomersTextBox.Text = statistics.NumberOfCustomers.ToString();
+			_highestOrderPriceTextBox.Text = statistics.MaxOrderPrice.ToString("C");
+			_averageOrderPriceTextBox.Text = statistics.AverageOrderPrice.ToString("C");
+			_highestOrderCustomerTextBox.Text = statistics.MaxOrderCustomerCompanyName;
+			_mostOrdersPerCustomerTextBox.Text = statistics.MostOrdersForOneCustomer.ToString();
+			_mostOrdersCustomerTextBox.Text = statistics.MostOrdersCustomerCompanyName;
 		}
 
 
