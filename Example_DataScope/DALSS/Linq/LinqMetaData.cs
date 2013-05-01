@@ -2,8 +2,8 @@
 // This is generated code. 
 //////////////////////////////////////////////////////////////
 // Code is generated using LLBLGen Pro version: 4.0
-// Code is generated on: donderdag 19 juli 2012 13:46:12
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET35
+// Code is generated on: woensdag 1 mei 2013 12:43:12
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 //////////////////////////////////////////////////////////////
 using System;
@@ -222,7 +222,7 @@ namespace Northwind.SSDAL.Linq
 		{
 			get { return new DataSource<UserGroupEntity>(_transactionToUse, new ElementCreator(), _customFunctionMappings, _contextToUse); }
 		}
-		
+ 
 		#region Class Property Declarations
 		/// <summary> Gets / sets the ITransaction to use for the queries created with this meta data object.</summary>
 		/// <remarks> Be aware that the ITransaction object set via this property is kept alive by the LLBLGenProQuery objects created with this meta data

@@ -2,8 +2,8 @@
 // This is generated code. 
 //////////////////////////////////////////////////////////////
 // Code is generated using LLBLGen Pro version: 4.0
-// Code is generated on: maandag 2 juli 2012 15:42:07
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated on: woensdag 1 mei 2013 12:42:35
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////

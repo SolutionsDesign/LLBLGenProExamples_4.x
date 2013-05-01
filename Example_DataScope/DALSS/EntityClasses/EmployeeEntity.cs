@@ -2,8 +2,8 @@
 // This is generated code. 
 //////////////////////////////////////////////////////////////
 // Code is generated using LLBLGen Pro version: 4.0
-// Code is generated on: donderdag 19 juli 2012 13:46:12
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated on: woensdag 1 mei 2013 12:43:13
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -30,7 +30,6 @@ namespace Northwind.SSDAL.EntityClasses
 	
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
 	// __LLBLGENPRO_USER_CODE_REGION_END
-	
 
 	/// <summary>Entity class which represents the entity 'Employee'. <br/><br/>
 	/// 
@@ -38,8 +37,7 @@ namespace Northwind.SSDAL.EntityClasses
 	[Serializable]
 	public partial class EmployeeEntity : CommonEntityBase
 		// __LLBLGENPRO_USER_CODE_REGION_START AdditionalInterfaces
-		// __LLBLGENPRO_USER_CODE_REGION_END
-			
+		// __LLBLGENPRO_USER_CODE_REGION_END	
 	{
 		#region Class Member Declarations
 		private Northwind.SSDAL.CollectionClasses.EmployeeCollection	_employees;
@@ -50,12 +48,9 @@ namespace Northwind.SSDAL.EntityClasses
 		private bool	_alwaysFetchOrders, _alreadyFetchedOrders;
 		private EmployeeEntity _employee;
 		private bool	_alwaysFetchEmployee, _alreadyFetchedEmployee, _employeeReturnsNewIfNotFound;
-		private RegionEntity _region_;
-		private bool	_alwaysFetchRegion_, _alreadyFetchedRegion_, _region_ReturnsNewIfNotFound;
 
 		// __LLBLGENPRO_USER_CODE_REGION_START PrivateMembers
 		// __LLBLGENPRO_USER_CODE_REGION_END
-		
 		#endregion
 
 		#region Statics
@@ -67,8 +62,6 @@ namespace Northwind.SSDAL.EntityClasses
 		{
 			/// <summary>Member name Employee</summary>
 			public static readonly string Employee = "Employee";
-			/// <summary>Member name Region_</summary>
-			public static readonly string Region_ = "Region_";
 			/// <summary>Member name Employees</summary>
 			public static readonly string Employees = "Employees";
 			/// <summary>Member name EmployeeTerritories</summary>
@@ -137,19 +130,9 @@ namespace Northwind.SSDAL.EntityClasses
 			_employeeReturnsNewIfNotFound = info.GetBoolean("_employeeReturnsNewIfNotFound");
 			_alwaysFetchEmployee = info.GetBoolean("_alwaysFetchEmployee");
 			_alreadyFetchedEmployee = info.GetBoolean("_alreadyFetchedEmployee");
-
-			_region_ = (RegionEntity)info.GetValue("_region_", typeof(RegionEntity));
-			if(_region_!=null)
-			{
-				_region_.AfterSave+=new EventHandler(OnEntityAfterSave);
-			}
-			_region_ReturnsNewIfNotFound = info.GetBoolean("_region_ReturnsNewIfNotFound");
-			_alwaysFetchRegion_ = info.GetBoolean("_alwaysFetchRegion_");
-			_alreadyFetchedRegion_ = info.GetBoolean("_alreadyFetchedRegion_");
 			this.FixupDeserialization(FieldInfoProviderSingleton.GetInstance(), PersistenceInfoProviderSingleton.GetInstance());
 			// __LLBLGENPRO_USER_CODE_REGION_START DeserializationConstructor
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 		}
 		
 		
@@ -159,10 +142,6 @@ namespace Northwind.SSDAL.EntityClasses
 		{
 			switch((EmployeeFieldIndex)fieldIndex)
 			{
-				case EmployeeFieldIndex.RegionId:
-					DesetupSyncRegion_(true, false);
-					_alreadyFetchedRegion_ = false;
-					break;
 				case EmployeeFieldIndex.ReportsTo:
 					DesetupSyncEmployee(true, false);
 					_alreadyFetchedEmployee = false;
@@ -180,7 +159,6 @@ namespace Northwind.SSDAL.EntityClasses
 			_alreadyFetchedEmployeeTerritories = (_employeeTerritories.Count > 0);
 			_alreadyFetchedOrders = (_orders.Count > 0);
 			_alreadyFetchedEmployee = (_employee != null);
-			_alreadyFetchedRegion_ = (_region_ != null);
 		}
 				
 		/// <summary>Gets the relation objects which represent the relation the fieldName specified is mapped on. </summary>
@@ -201,9 +179,6 @@ namespace Northwind.SSDAL.EntityClasses
 			{
 				case "Employee":
 					toReturn.Add(Relations.EmployeeEntityUsingEmployeeIdReportsTo);
-					break;
-				case "Region_":
-					toReturn.Add(Relations.RegionEntityUsingRegionId);
 					break;
 				case "Employees":
 					toReturn.Add(Relations.EmployeeEntityUsingReportsTo);
@@ -241,14 +216,9 @@ namespace Northwind.SSDAL.EntityClasses
 			info.AddValue("_employeeReturnsNewIfNotFound", _employeeReturnsNewIfNotFound);
 			info.AddValue("_alwaysFetchEmployee", _alwaysFetchEmployee);
 			info.AddValue("_alreadyFetchedEmployee", _alreadyFetchedEmployee);
-			info.AddValue("_region_", (!this.MarkedForDeletion?_region_:null));
-			info.AddValue("_region_ReturnsNewIfNotFound", _region_ReturnsNewIfNotFound);
-			info.AddValue("_alwaysFetchRegion_", _alwaysFetchRegion_);
-			info.AddValue("_alreadyFetchedRegion_", _alreadyFetchedRegion_);
 
 			// __LLBLGENPRO_USER_CODE_REGION_START GetObjectInfo
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			base.GetObjectData(info, context);
 		}
 		
@@ -264,10 +234,6 @@ namespace Northwind.SSDAL.EntityClasses
 				case "Employee":
 					_alreadyFetchedEmployee = true;
 					this.Employee = (EmployeeEntity)entity;
-					break;
-				case "Region_":
-					_alreadyFetchedRegion_ = true;
-					this.Region_ = (RegionEntity)entity;
 					break;
 				case "Employees":
 					_alreadyFetchedEmployees = true;
@@ -307,9 +273,6 @@ namespace Northwind.SSDAL.EntityClasses
 				case "Employee":
 					SetupSyncEmployee(relatedEntity);
 					break;
-				case "Region_":
-					SetupSyncRegion_(relatedEntity);
-					break;
 				case "Employees":
 					_employees.Add((EmployeeEntity)relatedEntity);
 					break;
@@ -335,9 +298,6 @@ namespace Northwind.SSDAL.EntityClasses
 			{
 				case "Employee":
 					DesetupSyncEmployee(false, true);
-					break;
-				case "Region_":
-					DesetupSyncRegion_(false, true);
 					break;
 				case "Employees":
 					this.PerformRelatedEntityRemoval(_employees, relatedEntity, signalRelatedEntityManyToOne);
@@ -369,10 +329,6 @@ namespace Northwind.SSDAL.EntityClasses
 			if(_employee!=null)
 			{
 				toReturn.Add(_employee);
-			}
-			if(_region_!=null)
-			{
-				toReturn.Add(_region_);
 			}
 			return toReturn;
 		}
@@ -484,7 +440,7 @@ namespace Northwind.SSDAL.EntityClasses
 				AddToTransactionIfNecessary(_employees);
 				_employees.SuppressClearInGetMulti=!forceFetch;
 				_employees.EntityFactoryToUse = entityFactoryToUse;
-				_employees.GetMultiManyToOne(this, null, filter);
+				_employees.GetMultiManyToOne(this, filter);
 				_employees.SuppressClearInGetMulti=false;
 				_alreadyFetchedEmployees = true;
 			}
@@ -652,54 +608,12 @@ namespace Northwind.SSDAL.EntityClasses
 		}
 
 
-		/// <summary> Retrieves the related entity of type 'RegionEntity', using a relation of type 'n:1'</summary>
-		/// <returns>A fetched entity of type 'RegionEntity' which is related to this entity.</returns>
-		public RegionEntity GetSingleRegion_()
-		{
-			return GetSingleRegion_(false);
-		}
-
-		/// <summary> Retrieves the related entity of type 'RegionEntity', using a relation of type 'n:1'</summary>
-		/// <param name="forceFetch">if true, it will discard any changes currently in the currently loaded related entity and will refetch the entity from the persistent storage</param>
-		/// <returns>A fetched entity of type 'RegionEntity' which is related to this entity.</returns>
-		public virtual RegionEntity GetSingleRegion_(bool forceFetch)
-		{
-			if( ( !_alreadyFetchedRegion_ || forceFetch || _alwaysFetchRegion_) && !this.IsSerializing && !this.IsDeserializing  && !this.InDesignMode)			
-			{
-				bool performLazyLoading = this.CheckIfLazyLoadingShouldOccur(Relations.RegionEntityUsingRegionId);
-				RegionEntity newEntity = new RegionEntity();
-				bool fetchResult = false;
-				if(performLazyLoading)
-				{
-					AddToTransactionIfNecessary(newEntity);
-					fetchResult = newEntity.FetchUsingPK(this.RegionId.GetValueOrDefault());
-				}
-				if(fetchResult)
-				{
-					newEntity = (RegionEntity)GetFromActiveContext(newEntity);
-				}
-				else
-				{
-					if(!_region_ReturnsNewIfNotFound)
-					{
-						RemoveFromTransactionIfNecessary(newEntity);
-						newEntity = null;
-					}
-				}
-				this.Region_ = newEntity;
-				_alreadyFetchedRegion_ = fetchResult;
-			}
-			return _region_;
-		}
-
-
 		/// <summary>Gets all related data objects, stored by name. The name is the field name mapped onto the relation for that particular data element.</summary>
 		/// <returns>Dictionary with per name the related referenced data element, which can be an entity collection or an entity or null</returns>
 		protected override Dictionary<string, object> GetRelatedData()
 		{
 			Dictionary<string, object> toReturn = new Dictionary<string, object>();
 			toReturn.Add("Employee", _employee);
-			toReturn.Add("Region_", _region_);
 			toReturn.Add("Employees", _employees);
 			toReturn.Add("EmployeeTerritories", _employeeTerritories);
 			toReturn.Add("Orders", _orders);
@@ -717,7 +631,6 @@ namespace Northwind.SSDAL.EntityClasses
 
 			// __LLBLGENPRO_USER_CODE_REGION_START InitClassEmpty
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 
 			OnInitialized();
 		}		
@@ -736,7 +649,6 @@ namespace Northwind.SSDAL.EntityClasses
 
 			// __LLBLGENPRO_USER_CODE_REGION_START InitClassFetch
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 
 			OnInitialized();
 		}
@@ -754,12 +666,10 @@ namespace Northwind.SSDAL.EntityClasses
 			_orders = new Northwind.SSDAL.CollectionClasses.OrderCollection();
 			_orders.SetContainingEntityInfo(this, "Employee");
 			_employeeReturnsNewIfNotFound = false;
-			_region_ReturnsNewIfNotFound = false;
 			PerformDependencyInjection();
 
 			// __LLBLGENPRO_USER_CODE_REGION_START InitClassMembers
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			OnInitClassMembersComplete();
 		}
 
@@ -801,8 +711,6 @@ namespace Northwind.SSDAL.EntityClasses
 			fieldHashtable = new Dictionary<string, string>();
 			_fieldsCustomProperties.Add("Region", fieldHashtable);
 			fieldHashtable = new Dictionary<string, string>();
-			_fieldsCustomProperties.Add("RegionId", fieldHashtable);
-			fieldHashtable = new Dictionary<string, string>();
 			_fieldsCustomProperties.Add("ReportsTo", fieldHashtable);
 			fieldHashtable = new Dictionary<string, string>();
 			_fieldsCustomProperties.Add("Title", fieldHashtable);
@@ -836,39 +744,6 @@ namespace Northwind.SSDAL.EntityClasses
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
 		private void OnEmployeePropertyChanged( object sender, PropertyChangedEventArgs e )
-		{
-			switch( e.PropertyName )
-			{
-				default:
-					break;
-			}
-		}
-
-		/// <summary> Removes the sync logic for member _region_</summary>
-		/// <param name="signalRelatedEntity">If set to true, it will call the related entity's UnsetRelatedEntity method</param>
-		/// <param name="resetFKFields">if set to true it will also reset the FK fields pointing to the related entity</param>
-		private void DesetupSyncRegion_(bool signalRelatedEntity, bool resetFKFields)
-		{
-			this.PerformDesetupSyncRelatedEntity( _region_, new PropertyChangedEventHandler( OnRegion_PropertyChanged ), "Region_", Northwind.SSDAL.RelationClasses.StaticEmployeeRelations.RegionEntityUsingRegionIdStatic, true, signalRelatedEntity, "Employees", resetFKFields, new int[] { (int)EmployeeFieldIndex.RegionId } );		
-			_region_ = null;
-		}
-		
-		/// <summary> setups the sync logic for member _region_</summary>
-		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncRegion_(IEntityCore relatedEntity)
-		{
-			if(_region_!=relatedEntity)
-			{		
-				DesetupSyncRegion_(true, true);
-				_region_ = (RegionEntity)relatedEntity;
-				this.PerformSetupSyncRelatedEntity( _region_, new PropertyChangedEventHandler( OnRegion_PropertyChanged ), "Region_", Northwind.SSDAL.RelationClasses.StaticEmployeeRelations.RegionEntityUsingRegionIdStatic, true, ref _alreadyFetchedRegion_, new string[] {  } );
-			}
-		}
-
-		/// <summary>Handles property change events of properties in a related entity.</summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void OnRegion_PropertyChanged( object sender, PropertyChangedEventArgs e )
 		{
 			switch( e.PropertyName )
 			{
@@ -954,13 +829,6 @@ namespace Northwind.SSDAL.EntityClasses
 		public static IPrefetchPathElement PrefetchPathEmployee
 		{
 			get	{ return new PrefetchPathElement(new Northwind.SSDAL.CollectionClasses.EmployeeCollection(), (IEntityRelation)GetRelationsForField("Employee")[0], (int)Northwind.SSDAL.EntityType.EmployeeEntity, (int)Northwind.SSDAL.EntityType.EmployeeEntity, 0, null, null, null, "Employee", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
-		}
-
-		/// <summary> Creates a new PrefetchPathElement object which contains all the information to prefetch the related entities of type 'Region'  for this entity.</summary>
-		/// <returns>Ready to use IPrefetchPathElement implementation.</returns>
-		public static IPrefetchPathElement PrefetchPathRegion_
-		{
-			get	{ return new PrefetchPathElement(new Northwind.SSDAL.CollectionClasses.RegionCollection(), (IEntityRelation)GetRelationsForField("Region_")[0], (int)Northwind.SSDAL.EntityType.EmployeeEntity, (int)Northwind.SSDAL.EntityType.RegionEntity, 0, null, null, null, "Region_", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
 		}
 
 
@@ -1135,16 +1003,6 @@ namespace Northwind.SSDAL.EntityClasses
 		{
 			get { return (System.String)GetValue((int)EmployeeFieldIndex.Region, true); }
 			set	{ SetValue((int)EmployeeFieldIndex.Region, value, true); }
-		}
-
-		/// <summary> The RegionId property of the Entity Employee<br/><br/></summary>
-		/// <remarks>Mapped on  table field: "Employees"."RegionID"<br/>
-		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
-		public virtual Nullable<System.Int32> RegionId
-		{
-			get { return (Nullable<System.Int32>)GetValue((int)EmployeeFieldIndex.RegionId, false); }
-			set	{ SetValue((int)EmployeeFieldIndex.RegionId, value, true); }
 		}
 
 		/// <summary> The ReportsTo property of the Entity Employee<br/><br/></summary>
@@ -1336,65 +1194,6 @@ namespace Northwind.SSDAL.EntityClasses
 			set { _employeeReturnsNewIfNotFound = value; }	
 		}
 
-		/// <summary> Gets / sets related entity of type 'RegionEntity'. This property is not visible in databound grids.
-		/// Setting this property to a new object will make the load-on-demand feature to stop fetching data from the database, until you set this
-		/// property to null. Setting this property to an entity will make sure that FK-PK relations are synchronized when appropriate.<br/><br/>
-		/// </summary>
-		/// <remarks>This property is added for conveniance, however it is recommeded to use the method 'GetSingleRegion_()', because 
-		/// this property is rather expensive and a method tells the user to cache the result when it has to be used more than once in the
-		/// same scope. The property is marked non-browsable to make it hidden in bound controls, f.e. datagrids.</remarks>
-		[Browsable(false)]
-		public virtual RegionEntity Region_
-		{
-			get	{ return GetSingleRegion_(false); }
-			set 
-			{ 
-				if(this.IsDeserializing)
-				{
-					SetupSyncRegion_(value);
-				}
-				else
-				{
-					SetSingleRelatedEntityNavigator(value, "Employees", "Region_", _region_, true); 
-				}
-			}
-		}
-
-		/// <summary> Gets / sets the lazy loading flag for Region_. When set to true, Region_ is always refetched from the 
-		/// persistent storage. When set to false, the data is only fetched the first time Region_ is accessed. You can always execute a forced fetch by calling GetSingleRegion_(true).</summary>
-		[Browsable(false)]
-		public bool AlwaysFetchRegion_
-		{
-			get	{ return _alwaysFetchRegion_; }
-			set	{ _alwaysFetchRegion_ = value; }	
-		}
-				
-		/// <summary>Gets / Sets the lazy loading flag if the property Region_ already has been fetched. Setting this property to false when Region_ has been fetched
-		/// will set Region_ to null as well. Setting this property to true while Region_ hasn't been fetched disables lazy loading for Region_</summary>
-		[Browsable(false)]
-		public bool AlreadyFetchedRegion_
-		{
-			get { return _alreadyFetchedRegion_;}
-			set 
-			{
-				if(_alreadyFetchedRegion_ && !value)
-				{
-					this.Region_ = null;
-				}
-				_alreadyFetchedRegion_ = value;
-			}
-		}
-
-		/// <summary> Gets / sets the flag for what to do if the related entity available through the property Region_ is not found
-		/// in the database. When set to true, Region_ will return a new entity instance if the related entity is not found, otherwise 
-		/// null be returned if the related entity is not found. Default: false.</summary>
-		[Browsable(false)]
-		public bool Region_ReturnsNewIfNotFound
-		{
-			get	{ return _region_ReturnsNewIfNotFound; }
-			set { _region_ReturnsNewIfNotFound = value; }	
-		}
-
 
 		/// <summary> Gets or sets a value indicating whether this entity is a subtype</summary>
 		protected override bool LLBLGenProIsSubType
@@ -1423,7 +1222,6 @@ namespace Northwind.SSDAL.EntityClasses
 		
 		// __LLBLGENPRO_USER_CODE_REGION_START CustomEntityCode
 		// __LLBLGENPRO_USER_CODE_REGION_END
-		
 		#endregion
 
 		#region Included code

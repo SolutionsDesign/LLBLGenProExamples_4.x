@@ -2,8 +2,8 @@
 // This is generated code. 
 //////////////////////////////////////////////////////////////
 // Code is generated using LLBLGen Pro version: 4.0
-// Code is generated on: maandag 2 juli 2012 15:42:07
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated on: woensdag 1 mei 2013 12:42:34
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -36,7 +36,6 @@ namespace Northwind.DAL.EntityClasses
 		private EntityCollection<EmployeeTerritoryEntity> _employeeTerritories;
 		private EntityCollection<OrderEntity> _orders;
 		private EmployeeEntity _employee;
-		private RegionEntity _region_;
 
 		// __LLBLGENPRO_USER_CODE_REGION_START PrivateMembers
 		// __LLBLGENPRO_USER_CODE_REGION_END
@@ -51,8 +50,6 @@ namespace Northwind.DAL.EntityClasses
 		{
 			/// <summary>Member name Employee</summary>
 			public static readonly string Employee = "Employee";
-			/// <summary>Member name Region_</summary>
-			public static readonly string Region_ = "Region_";
 			/// <summary>Member name Employees</summary>
 			public static readonly string Employees = "Employees";
 			/// <summary>Member name EmployeeTerritories</summary>
@@ -124,11 +121,6 @@ namespace Northwind.DAL.EntityClasses
 				{
 					_employee.AfterSave+=new EventHandler(OnEntityAfterSave);
 				}
-				_region_ = (RegionEntity)info.GetValue("_region_", typeof(RegionEntity));
-				if(_region_!=null)
-				{
-					_region_.AfterSave+=new EventHandler(OnEntityAfterSave);
-				}
 				this.FixupDeserialization(FieldInfoProviderSingleton.GetInstance());
 			}
 			// __LLBLGENPRO_USER_CODE_REGION_START DeserializationConstructor
@@ -142,9 +134,6 @@ namespace Northwind.DAL.EntityClasses
 		{
 			switch((EmployeeFieldIndex)fieldIndex)
 			{
-				case EmployeeFieldIndex.RegionId:
-					DesetupSyncRegion_(true, false);
-					break;
 				case EmployeeFieldIndex.ReportsTo:
 					DesetupSyncEmployee(true, false);
 					break;
@@ -164,9 +153,6 @@ namespace Northwind.DAL.EntityClasses
 			{
 				case "Employee":
 					this.Employee = (EmployeeEntity)entity;
-					break;
-				case "Region_":
-					this.Region_ = (RegionEntity)entity;
 					break;
 				case "Employees":
 					this.Employees.Add((EmployeeEntity)entity);
@@ -201,9 +187,6 @@ namespace Northwind.DAL.EntityClasses
 			{
 				case "Employee":
 					toReturn.Add(Relations.EmployeeEntityUsingEmployeeIdReportsTo);
-					break;
-				case "Region_":
-					toReturn.Add(Relations.RegionEntityUsingRegionId);
 					break;
 				case "Employees":
 					toReturn.Add(Relations.EmployeeEntityUsingReportsTo);
@@ -245,9 +228,6 @@ namespace Northwind.DAL.EntityClasses
 				case "Employee":
 					SetupSyncEmployee(relatedEntity);
 					break;
-				case "Region_":
-					SetupSyncRegion_(relatedEntity);
-					break;
 				case "Employees":
 					this.Employees.Add((EmployeeEntity)relatedEntity);
 					break;
@@ -272,9 +252,6 @@ namespace Northwind.DAL.EntityClasses
 			{
 				case "Employee":
 					DesetupSyncEmployee(false, true);
-					break;
-				case "Region_":
-					DesetupSyncRegion_(false, true);
 					break;
 				case "Employees":
 					this.PerformRelatedEntityRemoval(this.Employees, relatedEntity, signalRelatedEntityManyToOne);
@@ -308,10 +285,6 @@ namespace Northwind.DAL.EntityClasses
 			{
 				toReturn.Add(_employee);
 			}
-			if(_region_!=null)
-			{
-				toReturn.Add(_region_);
-			}
 			return toReturn;
 		}
 		
@@ -338,7 +311,6 @@ namespace Northwind.DAL.EntityClasses
 				info.AddValue("_employeeTerritories", ((_employeeTerritories!=null) && (_employeeTerritories.Count>0) && !this.MarkedForDeletion)?_employeeTerritories:null);
 				info.AddValue("_orders", ((_orders!=null) && (_orders.Count>0) && !this.MarkedForDeletion)?_orders:null);
 				info.AddValue("_employee", (!this.MarkedForDeletion?_employee:null));
-				info.AddValue("_region_", (!this.MarkedForDeletion?_region_:null));
 			}
 			// __LLBLGENPRO_USER_CODE_REGION_START GetObjectInfo
 			// __LLBLGENPRO_USER_CODE_REGION_END
@@ -387,15 +359,6 @@ namespace Northwind.DAL.EntityClasses
 		{
 			IRelationPredicateBucket bucket = new RelationPredicateBucket();
 			bucket.PredicateExpression.Add(new FieldCompareValuePredicate(EmployeeFields.EmployeeId, null, ComparisonOperator.Equal, this.ReportsTo));
-			return bucket;
-		}
-
-		/// <summary> Creates a new IRelationPredicateBucket object which contains the predicate expression and relation collection to fetch the related entity of type 'Region' to this entity.</summary>
-		/// <returns></returns>
-		public virtual IRelationPredicateBucket GetRelationInfoRegion_()
-		{
-			IRelationPredicateBucket bucket = new RelationPredicateBucket();
-			bucket.PredicateExpression.Add(new FieldCompareValuePredicate(RegionFields.RegionId, null, ComparisonOperator.Equal, this.RegionId));
 			return bucket;
 		}
 		
@@ -455,7 +418,6 @@ namespace Northwind.DAL.EntityClasses
 		{
 			Dictionary<string, object> toReturn = new Dictionary<string, object>();
 			toReturn.Add("Employee", _employee);
-			toReturn.Add("Region_", _region_);
 			toReturn.Add("Employees", _employees);
 			toReturn.Add("EmployeeTerritories", _employeeTerritories);
 			toReturn.Add("Orders", _orders);
@@ -511,8 +473,6 @@ namespace Northwind.DAL.EntityClasses
 			fieldHashtable = new Dictionary<string, string>();
 			_fieldsCustomProperties.Add("Region", fieldHashtable);
 			fieldHashtable = new Dictionary<string, string>();
-			_fieldsCustomProperties.Add("RegionId", fieldHashtable);
-			fieldHashtable = new Dictionary<string, string>();
 			_fieldsCustomProperties.Add("ReportsTo", fieldHashtable);
 			fieldHashtable = new Dictionary<string, string>();
 			_fieldsCustomProperties.Add("Title", fieldHashtable);
@@ -546,39 +506,6 @@ namespace Northwind.DAL.EntityClasses
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
 		private void OnEmployeePropertyChanged( object sender, PropertyChangedEventArgs e )
-		{
-			switch( e.PropertyName )
-			{
-				default:
-					break;
-			}
-		}
-
-		/// <summary> Removes the sync logic for member _region_</summary>
-		/// <param name="signalRelatedEntity">If set to true, it will call the related entity's UnsetRelatedEntity method</param>
-		/// <param name="resetFKFields">if set to true it will also reset the FK fields pointing to the related entity</param>
-		private void DesetupSyncRegion_(bool signalRelatedEntity, bool resetFKFields)
-		{
-			this.PerformDesetupSyncRelatedEntity( _region_, new PropertyChangedEventHandler( OnRegion_PropertyChanged ), "Region_", Northwind.DAL.RelationClasses.StaticEmployeeRelations.RegionEntityUsingRegionIdStatic, true, signalRelatedEntity, "Employees", resetFKFields, new int[] { (int)EmployeeFieldIndex.RegionId } );
-			_region_ = null;
-		}
-
-		/// <summary> setups the sync logic for member _region_</summary>
-		/// <param name="relatedEntity">Instance to set as the related entity of type entityType</param>
-		private void SetupSyncRegion_(IEntityCore relatedEntity)
-		{
-			if(_region_!=relatedEntity)
-			{
-				DesetupSyncRegion_(true, true);
-				_region_ = (RegionEntity)relatedEntity;
-				this.PerformSetupSyncRelatedEntity( _region_, new PropertyChangedEventHandler( OnRegion_PropertyChanged ), "Region_", Northwind.DAL.RelationClasses.StaticEmployeeRelations.RegionEntityUsingRegionIdStatic, true, new string[] {  } );
-			}
-		}
-		
-		/// <summary>Handles property change events of properties in a related entity.</summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void OnRegion_PropertyChanged( object sender, PropertyChangedEventArgs e )
 		{
 			switch( e.PropertyName )
 			{
@@ -644,13 +571,6 @@ namespace Northwind.DAL.EntityClasses
 		public static IPrefetchPathElement2 PrefetchPathEmployee
 		{
 			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(EmployeeEntityFactory))),	(IEntityRelation)GetRelationsForField("Employee")[0], (int)Northwind.DAL.EntityType.EmployeeEntity, (int)Northwind.DAL.EntityType.EmployeeEntity, 0, null, null, null, null, "Employee", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
-		}
-
-		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Region' for this entity.</summary>
-		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
-		public static IPrefetchPathElement2 PrefetchPathRegion_
-		{
-			get	{ return new PrefetchPathElement2(new EntityCollection(EntityFactoryCache2.GetEntityFactory(typeof(RegionEntityFactory))),	(IEntityRelation)GetRelationsForField("Region_")[0], (int)Northwind.DAL.EntityType.EmployeeEntity, (int)Northwind.DAL.EntityType.RegionEntity, 0, null, null, null, null, "Region_", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne); }
 		}
 
 
@@ -827,16 +747,6 @@ namespace Northwind.DAL.EntityClasses
 			set	{ SetValue((int)EmployeeFieldIndex.Region, value); }
 		}
 
-		/// <summary> The RegionId property of the Entity Employee<br/><br/></summary>
-		/// <remarks>Mapped on  table field: "Employees"."RegionID"<br/>
-		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
-		/// Table field behavior characteristics (is nullable, is PK, is identity): true, false, false</remarks>
-		public virtual Nullable<System.Int32> RegionId
-		{
-			get { return (Nullable<System.Int32>)GetValue((int)EmployeeFieldIndex.RegionId, false); }
-			set	{ SetValue((int)EmployeeFieldIndex.RegionId, value); }
-		}
-
 		/// <summary> The ReportsTo property of the Entity Employee<br/><br/></summary>
 		/// <remarks>Mapped on  table field: "Employees"."ReportsTo"<br/>
 		/// Table field type characteristics (type, precision, scale, length): Int, 10, 0, 0<br/>
@@ -902,24 +812,6 @@ namespace Northwind.DAL.EntityClasses
 				else
 				{
 					SetSingleRelatedEntityNavigator(value, "Employees", "Employee", _employee, true); 
-				}
-			}
-		}
-
-		/// <summary> Gets / sets related entity of type 'RegionEntity' which has to be set using a fetch action earlier. If no related entity is set for this property, null is returned..<br/><br/></summary>
-		[Browsable(false)]
-		public virtual RegionEntity Region_
-		{
-			get	{ return _region_; }
-			set
-			{
-				if(this.IsDeserializing)
-				{
-					SetupSyncRegion_(value);
-				}
-				else
-				{
-					SetSingleRelatedEntityNavigator(value, "Employees", "Region_", _region_, true); 
 				}
 			}
 		}

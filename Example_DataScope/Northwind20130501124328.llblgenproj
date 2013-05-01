@@ -99,18 +99,13 @@
       </LastUsedPreferences>
     </OutputType>
   </CodeGenerationCyclePreferences>
-  <OutputSettingValues>
-    <SettingValues>
-      <SettingValue Name="1:TdlEmitTimeDateInOutputFiles" Value="false" Type="3" />
-    </SettingValues>
-  </OutputSettingValues>
   <CodeGenerationMetaDataDefaults>
     <TargetElement Type="256">
-      <OutputSettingValues>
+      <Defaults>
         <Attributes>
           <Attribute Value="Browsable($false)" />
         </Attributes>
-      </OutputSettingValues>
+      </Defaults>
     </TargetElement>
   </CodeGenerationMetaDataDefaults>
   <EntityModel>

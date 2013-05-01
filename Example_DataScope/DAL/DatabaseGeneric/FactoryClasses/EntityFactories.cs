@@ -2,8 +2,8 @@
 // This is generated code. 
 //////////////////////////////////////////////////////////////
 // Code is generated using LLBLGen Pro version: 4.0
-// Code is generated on: maandag 2 juli 2012 15:42:07
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated on: woensdag 1 mei 2013 12:42:34
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -112,7 +112,6 @@ namespace Northwind.DAL.FactoryClasses
 			IEntity2 toReturn = new AuditActionTypeEntity(fields);
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewAuditActionTypeUsingFields
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 		#region Included Code
@@ -133,7 +132,6 @@ namespace Northwind.DAL.FactoryClasses
 			IEntity2 toReturn = new AuditInfoEntity(fields);
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewAuditInfoUsingFields
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 		#region Included Code
@@ -314,7 +312,6 @@ namespace Northwind.DAL.FactoryClasses
 			IEntity2 toReturn = new OrderAuditInfoEntity(fields);
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewOrderAuditInfoUsingFields
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 		#region Included Code
@@ -455,7 +452,6 @@ namespace Northwind.DAL.FactoryClasses
 			IEntity2 toReturn = new UserEntity(fields);
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewUserUsingFields
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 		#region Included Code
@@ -476,7 +472,6 @@ namespace Northwind.DAL.FactoryClasses
 			IEntity2 toReturn = new UserGroupEntity(fields);
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewUserGroupUsingFields
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 		#region Included Code
@@ -567,15 +562,6 @@ namespace Northwind.DAL.FactoryClasses
 	[Serializable]
 	public static class EntityFactoryFactory
 	{
-#if CF
-		/// <summary>Gets the factory of the entity with the Northwind.DAL.EntityType specified</summary>
-		/// <param name="typeOfEntity">The type of entity.</param>
-		/// <returns>factory to use or null if not found</returns>
-		public static IEntityFactory2 GetFactory(Northwind.DAL.EntityType typeOfEntity)
-		{
-			return GeneralEntityFactory.Create(typeOfEntity).GetEntityFactory();
-		}
-#else
 		private static Dictionary<Type, IEntityFactory2> _factoryPerType = new Dictionary<Type, IEntityFactory2>();
 
 		/// <summary>Initializes the <see cref="EntityFactoryFactory"/> class.</summary>
@@ -606,7 +592,6 @@ namespace Northwind.DAL.FactoryClasses
 		{
 			return GetFactory(GeneralEntityFactory.Create(typeOfEntity).GetType());
 		}
-#endif		
 	}
 		
 	/// <summary>Element creator for creating project elements from somewhere else, like inside Linq providers.</summary>
@@ -654,6 +639,13 @@ namespace Northwind.DAL.FactoryClasses
 		{
 			return new DynamicRelation(leftOperand, joinType, rightOperand, onClause);
 		}
+		
+		/// <summary>Obtains the inheritance info provider instance from the singleton </summary>
+		/// <returns>The singleton instance of the inheritance info provider</returns>
+		public override IInheritanceInfoProvider ObtainInheritanceInfoProviderInstance()
+		{
+			return InheritanceInfoProviderSingleton.GetInstance();
+		}
 
 		/// <summary>Creates a new dynamic relation instance</summary>
 		/// <param name="leftOperand">The left operand.</param>
@@ -680,13 +672,6 @@ namespace Northwind.DAL.FactoryClasses
 			return new DynamicRelation((Northwind.DAL.EntityType)Enum.Parse(typeof(Northwind.DAL.EntityType), leftOperandEntityName, false), joinType, (Northwind.DAL.EntityType)Enum.Parse(typeof(Northwind.DAL.EntityType), rightOperandEntityName, false), aliasLeftOperand, aliasRightOperand, onClause);
 		}
 		
-		/// <summary>Obtains the inheritance info provider instance from the singleton </summary>
-		/// <returns>The singleton instance of the inheritance info provider</returns>
-		public override IInheritanceInfoProvider ObtainInheritanceInfoProviderInstance()
-		{
-			return InheritanceInfoProviderSingleton.GetInstance();
-		}
-		
 		/// <summary>Implementation of the routine which gets the factory of the Entity type with the Northwind.DAL.EntityType value passed in</summary>
 		/// <param name="entityTypeValue">The entity type value.</param>
 		/// <returns>the entity factory of the entity type or null if not found</returns>
@@ -694,7 +679,7 @@ namespace Northwind.DAL.FactoryClasses
 		{
 			return EntityFactoryFactory.GetFactory((Northwind.DAL.EntityType)entityTypeValue);
 		}
-#if !CF		
+
 		/// <summary>Implementation of the routine which gets the factory of the Entity type with the .NET type passed in</summary>
 		/// <param name="typeOfEntity">The type of entity.</param>
 		/// <returns>the entity factory of the entity type or null if not found</returns>
@@ -702,6 +687,6 @@ namespace Northwind.DAL.FactoryClasses
 		{
 			return EntityFactoryFactory.GetFactory(typeOfEntity);
 		}
-#endif
+
 	}
 }

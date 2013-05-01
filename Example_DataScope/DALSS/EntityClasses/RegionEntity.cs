@@ -2,8 +2,8 @@
 // This is generated code. 
 //////////////////////////////////////////////////////////////
 // Code is generated using LLBLGen Pro version: 4.0
-// Code is generated on: donderdag 19 juli 2012 13:46:12
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated on: woensdag 1 mei 2013 12:43:13
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -30,7 +30,6 @@ namespace Northwind.SSDAL.EntityClasses
 	
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
 	// __LLBLGENPRO_USER_CODE_REGION_END
-	
 
 	/// <summary>Entity class which represents the entity 'Region'. <br/><br/>
 	/// 
@@ -38,18 +37,14 @@ namespace Northwind.SSDAL.EntityClasses
 	[Serializable]
 	public partial class RegionEntity : CommonEntityBase
 		// __LLBLGENPRO_USER_CODE_REGION_START AdditionalInterfaces
-		// __LLBLGENPRO_USER_CODE_REGION_END
-			
+		// __LLBLGENPRO_USER_CODE_REGION_END	
 	{
 		#region Class Member Declarations
-		private Northwind.SSDAL.CollectionClasses.EmployeeCollection	_employees;
-		private bool	_alwaysFetchEmployees, _alreadyFetchedEmployees;
 		private Northwind.SSDAL.CollectionClasses.TerritoryCollection	_territories;
 		private bool	_alwaysFetchTerritories, _alreadyFetchedTerritories;
 
 		// __LLBLGENPRO_USER_CODE_REGION_START PrivateMembers
 		// __LLBLGENPRO_USER_CODE_REGION_END
-		
 		#endregion
 
 		#region Statics
@@ -59,8 +54,6 @@ namespace Northwind.SSDAL.EntityClasses
 		/// <summary>All names of fields mapped onto a relation. Usable for in-memory filtering</summary>
 		public static partial class MemberNames
 		{
-			/// <summary>Member name Employees</summary>
-			public static readonly string Employees = "Employees";
 			/// <summary>Member name Territories</summary>
 			public static readonly string Territories = "Territories";
 		}
@@ -106,24 +99,18 @@ namespace Northwind.SSDAL.EntityClasses
 		/// <param name="context"></param>
 		protected RegionEntity(SerializationInfo info, StreamingContext context) : base(info, context)
 		{
-			_employees = (Northwind.SSDAL.CollectionClasses.EmployeeCollection)info.GetValue("_employees", typeof(Northwind.SSDAL.CollectionClasses.EmployeeCollection));
-			_alwaysFetchEmployees = info.GetBoolean("_alwaysFetchEmployees");
-			_alreadyFetchedEmployees = info.GetBoolean("_alreadyFetchedEmployees");
-
 			_territories = (Northwind.SSDAL.CollectionClasses.TerritoryCollection)info.GetValue("_territories", typeof(Northwind.SSDAL.CollectionClasses.TerritoryCollection));
 			_alwaysFetchTerritories = info.GetBoolean("_alwaysFetchTerritories");
 			_alreadyFetchedTerritories = info.GetBoolean("_alreadyFetchedTerritories");
 			this.FixupDeserialization(FieldInfoProviderSingleton.GetInstance(), PersistenceInfoProviderSingleton.GetInstance());
 			// __LLBLGENPRO_USER_CODE_REGION_START DeserializationConstructor
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 		}
 		
 
 		/// <summary> Will perform post-ReadXml actions</summary>
 		protected override void PerformPostReadXmlFixups()
 		{
-			_alreadyFetchedEmployees = (_employees.Count > 0);
 			_alreadyFetchedTerritories = (_territories.Count > 0);
 		}
 				
@@ -143,9 +130,6 @@ namespace Northwind.SSDAL.EntityClasses
 			RelationCollection toReturn = new RelationCollection();
 			switch(fieldName)
 			{
-				case "Employees":
-					toReturn.Add(Relations.EmployeeEntityUsingRegionId);
-					break;
 				case "Territories":
 					toReturn.Add(Relations.TerritoryEntityUsingRegionId);
 					break;
@@ -163,16 +147,12 @@ namespace Northwind.SSDAL.EntityClasses
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		protected override void GetObjectData(SerializationInfo info, StreamingContext context)
 		{
-			info.AddValue("_employees", (!this.MarkedForDeletion?_employees:null));
-			info.AddValue("_alwaysFetchEmployees", _alwaysFetchEmployees);
-			info.AddValue("_alreadyFetchedEmployees", _alreadyFetchedEmployees);
 			info.AddValue("_territories", (!this.MarkedForDeletion?_territories:null));
 			info.AddValue("_alwaysFetchTerritories", _alwaysFetchTerritories);
 			info.AddValue("_alreadyFetchedTerritories", _alreadyFetchedTerritories);
 
 			// __LLBLGENPRO_USER_CODE_REGION_START GetObjectInfo
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			base.GetObjectData(info, context);
 		}
 		
@@ -185,13 +165,6 @@ namespace Northwind.SSDAL.EntityClasses
 		{
 			switch(propertyName)
 			{
-				case "Employees":
-					_alreadyFetchedEmployees = true;
-					if(entity!=null)
-					{
-						this.Employees.Add((EmployeeEntity)entity);
-					}
-					break;
 				case "Territories":
 					_alreadyFetchedTerritories = true;
 					if(entity!=null)
@@ -213,9 +186,6 @@ namespace Northwind.SSDAL.EntityClasses
 		{
 			switch(fieldName)
 			{
-				case "Employees":
-					_employees.Add((EmployeeEntity)relatedEntity);
-					break;
 				case "Territories":
 					_territories.Add((TerritoryEntity)relatedEntity);
 					break;
@@ -233,9 +203,6 @@ namespace Northwind.SSDAL.EntityClasses
 		{
 			switch(fieldName)
 			{
-				case "Employees":
-					this.PerformRelatedEntityRemoval(_employees, relatedEntity, signalRelatedEntityManyToOne);
-					break;
 				case "Territories":
 					this.PerformRelatedEntityRemoval(_territories, relatedEntity, signalRelatedEntityManyToOne);
 					break;
@@ -265,7 +232,6 @@ namespace Northwind.SSDAL.EntityClasses
 		protected override List<IEntityCollection> GetMemberEntityCollections()
 		{
 			List<IEntityCollection> toReturn = new List<IEntityCollection>();
-			toReturn.Add(_employees);
 			toReturn.Add(_territories);
 
 			return toReturn;
@@ -326,61 +292,6 @@ namespace Northwind.SSDAL.EntityClasses
 		protected override List<IEntityRelation> GetAllRelations()
 		{
 			return new RegionRelations().GetAllRelations();
-		}
-
-		/// <summary> Retrieves all related entities of type 'EmployeeEntity' using a relation of type '1:n'.</summary>
-		/// <param name="forceFetch">if true, it will discard any changes currently in the collection and will rerun the complete query instead</param>
-		/// <returns>Filled collection with all related entities of type 'EmployeeEntity'</returns>
-		public Northwind.SSDAL.CollectionClasses.EmployeeCollection GetMultiEmployees(bool forceFetch)
-		{
-			return GetMultiEmployees(forceFetch, _employees.EntityFactoryToUse, null);
-		}
-
-		/// <summary> Retrieves all related entities of type 'EmployeeEntity' using a relation of type '1:n'.</summary>
-		/// <param name="forceFetch">if true, it will discard any changes currently in the collection and will rerun the complete query instead</param>
-		/// <param name="filter">Extra filter to limit the resultset.</param>
-		/// <returns>Filled collection with all related entities of type 'EmployeeEntity'</returns>
-		public Northwind.SSDAL.CollectionClasses.EmployeeCollection GetMultiEmployees(bool forceFetch, IPredicateExpression filter)
-		{
-			return GetMultiEmployees(forceFetch, _employees.EntityFactoryToUse, filter);
-		}
-
-		/// <summary> Retrieves all related entities of type 'EmployeeEntity' using a relation of type '1:n'.</summary>
-		/// <param name="forceFetch">if true, it will discard any changes currently in the collection and will rerun the complete query instead</param>
-		/// <param name="entityFactoryToUse">The entity factory to use for the GetMultiManyToOne() routine.</param>
-		/// <returns>Filled collection with all related entities of the type constructed by the passed in entity factory</returns>
-		public Northwind.SSDAL.CollectionClasses.EmployeeCollection GetMultiEmployees(bool forceFetch, IEntityFactory entityFactoryToUse)
-		{
-			return GetMultiEmployees(forceFetch, entityFactoryToUse, null);
-		}
-
-		/// <summary> Retrieves all related entities of type 'EmployeeEntity' using a relation of type '1:n'.</summary>
-		/// <param name="forceFetch">if true, it will discard any changes currently in the collection and will rerun the complete query instead</param>
-		/// <param name="entityFactoryToUse">The entity factory to use for the GetMultiManyToOne() routine.</param>
-		/// <param name="filter">Extra filter to limit the resultset.</param>
-		/// <returns>Filled collection with all related entities of the type constructed by the passed in entity factory</returns>
-		public virtual Northwind.SSDAL.CollectionClasses.EmployeeCollection GetMultiEmployees(bool forceFetch, IEntityFactory entityFactoryToUse, IPredicateExpression filter)
-		{
- 			if( ( !_alreadyFetchedEmployees || forceFetch || _alwaysFetchEmployees) && !this.IsSerializing && !this.IsDeserializing && !this.InDesignMode)
-			{
-				AddToTransactionIfNecessary(_employees);
-				_employees.SuppressClearInGetMulti=!forceFetch;
-				_employees.EntityFactoryToUse = entityFactoryToUse;
-				_employees.GetMultiManyToOne(null, this, filter);
-				_employees.SuppressClearInGetMulti=false;
-				_alreadyFetchedEmployees = true;
-			}
-			return _employees;
-		}
-
-		/// <summary> Sets the collection parameters for the collection for 'Employees'. These settings will be taken into account
-		/// when the property Employees is requested or GetMultiEmployees is called.</summary>
-		/// <param name="maxNumberOfItemsToReturn"> The maximum number of items to return. When set to 0, this parameter is ignored</param>
-		/// <param name="sortClauses">The order by specifications for the sorting of the resultset. When not specified (null), no sorting is applied.</param>
-		public virtual void SetCollectionParametersEmployees(long maxNumberOfItemsToReturn, ISortExpression sortClauses)
-		{
-			_employees.SortClauses=sortClauses;
-			_employees.MaxNumberOfItemsToReturn=maxNumberOfItemsToReturn;
 		}
 
 		/// <summary> Retrieves all related entities of type 'TerritoryEntity' using a relation of type '1:n'.</summary>
@@ -444,7 +355,6 @@ namespace Northwind.SSDAL.EntityClasses
 		protected override Dictionary<string, object> GetRelatedData()
 		{
 			Dictionary<string, object> toReturn = new Dictionary<string, object>();
-			toReturn.Add("Employees", _employees);
 			toReturn.Add("Territories", _territories);
 			return toReturn;
 		}
@@ -460,7 +370,6 @@ namespace Northwind.SSDAL.EntityClasses
 
 			// __LLBLGENPRO_USER_CODE_REGION_START InitClassEmpty
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 
 			OnInitialized();
 		}		
@@ -479,7 +388,6 @@ namespace Northwind.SSDAL.EntityClasses
 
 			// __LLBLGENPRO_USER_CODE_REGION_START InitClassFetch
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 
 			OnInitialized();
 		}
@@ -488,16 +396,12 @@ namespace Northwind.SSDAL.EntityClasses
 		private void InitClassMembers()
 		{
 
-			_employees = new Northwind.SSDAL.CollectionClasses.EmployeeCollection();
-			_employees.SetContainingEntityInfo(this, "Region_");
-
 			_territories = new Northwind.SSDAL.CollectionClasses.TerritoryCollection();
 			_territories.SetContainingEntityInfo(this, "Region");
 			PerformDependencyInjection();
 
 			// __LLBLGENPRO_USER_CODE_REGION_START InitClassMembers
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			OnInitClassMembersComplete();
 		}
 
@@ -566,13 +470,6 @@ namespace Northwind.SSDAL.EntityClasses
 			get { return _customProperties;}
 		}
 
-		/// <summary> Creates a new PrefetchPathElement object which contains all the information to prefetch the related entities of type 'Employee' for this entity.</summary>
-		/// <returns>Ready to use IPrefetchPathElement implementation.</returns>
-		public static IPrefetchPathElement PrefetchPathEmployees
-		{
-			get { return new PrefetchPathElement(new Northwind.SSDAL.CollectionClasses.EmployeeCollection(), (IEntityRelation)GetRelationsForField("Employees")[0], (int)Northwind.SSDAL.EntityType.RegionEntity, (int)Northwind.SSDAL.EntityType.EmployeeEntity, 0, null, null, null, "Employees", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany); }
-		}
-
 		/// <summary> Creates a new PrefetchPathElement object which contains all the information to prefetch the related entities of type 'Territory' for this entity.</summary>
 		/// <returns>Ready to use IPrefetchPathElement implementation.</returns>
 		public static IPrefetchPathElement PrefetchPathTerritories
@@ -624,39 +521,6 @@ namespace Northwind.SSDAL.EntityClasses
 			set	{ SetValue((int)RegionFieldIndex.RegionId, value, true); }
 		}
 
-		/// <summary> Retrieves all related entities of type 'EmployeeEntity' using a relation of type '1:n'.<br/><br/>
-		/// </summary>
-		/// <remarks>This property is added for databinding conveniance, however it is recommeded to use the method 'GetMultiEmployees()', because 
-		/// this property is rather expensive and a method tells the user to cache the result when it has to be used more than once in the same scope.</remarks>
-		public virtual Northwind.SSDAL.CollectionClasses.EmployeeCollection Employees
-		{
-			get	{ return GetMultiEmployees(false); }
-		}
-
-		/// <summary> Gets / sets the lazy loading flag for Employees. When set to true, Employees is always refetched from the 
-		/// persistent storage. When set to false, the data is only fetched the first time Employees is accessed. You can always execute/ a forced fetch by calling GetMultiEmployees(true).</summary>
-		[Browsable(false)]
-		public bool AlwaysFetchEmployees
-		{
-			get	{ return _alwaysFetchEmployees; }
-			set	{ _alwaysFetchEmployees = value; }	
-		}		
-				
-		/// <summary>Gets / Sets the lazy loading flag if the property Employees already has been fetched. Setting this property to false when Employees has been fetched
-		/// will clear the Employees collection well. Setting this property to true while Employees hasn't been fetched disables lazy loading for Employees</summary>
-		[Browsable(false)]
-		public bool AlreadyFetchedEmployees
-		{
-			get { return _alreadyFetchedEmployees;}
-			set 
-			{
-				if(_alreadyFetchedEmployees && !value && (_employees != null))
-				{
-					_employees.Clear();
-				}
-				_alreadyFetchedEmployees = value;
-			}
-		}
 		/// <summary> Retrieves all related entities of type 'TerritoryEntity' using a relation of type '1:n'.<br/><br/>
 		/// </summary>
 		/// <remarks>This property is added for databinding conveniance, however it is recommeded to use the method 'GetMultiTerritories()', because 
@@ -719,7 +583,6 @@ namespace Northwind.SSDAL.EntityClasses
 		
 		// __LLBLGENPRO_USER_CODE_REGION_START CustomEntityCode
 		// __LLBLGENPRO_USER_CODE_REGION_END
-		
 		#endregion
 
 		#region Included code

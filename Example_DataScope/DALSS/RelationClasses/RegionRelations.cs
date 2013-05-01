@@ -2,8 +2,8 @@
 // This is generated code. 
 //////////////////////////////////////////////////////////////
 // Code is generated using LLBLGen Pro version: 4.0
-// Code is generated on: donderdag 19 juli 2012 13:46:12
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated on: woensdag 1 mei 2013 12:43:12
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -30,27 +30,11 @@ namespace Northwind.SSDAL.RelationClasses
 		public virtual List<IEntityRelation> GetAllRelations()
 		{
 			List<IEntityRelation> toReturn = new List<IEntityRelation>();
-			toReturn.Add(this.EmployeeEntityUsingRegionId);
 			toReturn.Add(this.TerritoryEntityUsingRegionId);
 			return toReturn;
 		}
 
 		#region Class Property Declarations
-
-		/// <summary>Returns a new IEntityRelation object, between RegionEntity and EmployeeEntity over the 1:n relation they have, using the relation between the fields:
-		/// Region.RegionId - Employee.RegionId
-		/// </summary>
-		public virtual IEntityRelation EmployeeEntityUsingRegionId
-		{
-			get
-			{
-				IEntityRelation relation = new EntityRelation(SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany, "Employees" , true);
-				relation.AddEntityFieldPair(RegionFields.RegionId, EmployeeFields.RegionId);
-				relation.InheritanceInfoPkSideEntity = InheritanceInfoProviderSingleton.GetInstance().GetInheritanceInfo("RegionEntity", true);
-				relation.InheritanceInfoFkSideEntity = InheritanceInfoProviderSingleton.GetInstance().GetInheritanceInfo("EmployeeEntity", false);
-				return relation;
-			}
-		}
 
 		/// <summary>Returns a new IEntityRelation object, between RegionEntity and TerritoryEntity over the 1:n relation they have, using the relation between the fields:
 		/// Region.RegionId - Territory.RegionId
@@ -82,7 +66,6 @@ namespace Northwind.SSDAL.RelationClasses
 	/// <summary>Static class which is used for providing relationship instances which are re-used internally for syncing</summary>
 	internal static class StaticRegionRelations
 	{
-		internal static readonly IEntityRelation EmployeeEntityUsingRegionIdStatic = new RegionRelations().EmployeeEntityUsingRegionId;
 		internal static readonly IEntityRelation TerritoryEntityUsingRegionIdStatic = new RegionRelations().TerritoryEntityUsingRegionId;
 
 		/// <summary>CTor</summary>

@@ -2,8 +2,8 @@
 // This is generated code. 
 //////////////////////////////////////////////////////////////
 // Code is generated using LLBLGen Pro version: 4.0
-// Code is generated on: donderdag 19 juli 2012 13:46:12
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated on: woensdag 1 mei 2013 12:43:12
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -25,7 +25,6 @@ namespace Northwind.SSDAL.DaoClasses
 	
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
 	// __LLBLGENPRO_USER_CODE_REGION_END
-	
 
 	/// <summary>General DAO class for the Employee Entity. It will perform database oriented actions for a entity of type 'EmployeeEntity'.</summary>
 	public partial class EmployeeDAO : CommonDaoBase
@@ -45,14 +44,13 @@ namespace Northwind.SSDAL.DaoClasses
 		/// <param name="entityFactoryToUse">The EntityFactory to use when creating entity objects during a GetMulti() call.</param>
 		/// <param name="filter">Extra filter to limit the resultset. Predicate expression can be null, in which case it will be ignored.</param>
 		/// <param name="employeeInstance">EmployeeEntity instance to use as a filter for the EmployeeEntity objects to return</param>
-		/// <param name="region_Instance">RegionEntity instance to use as a filter for the EmployeeEntity objects to return</param>
 		/// <param name="pageNumber">The page number to retrieve.</param>
 		/// <param name="pageSize">The page size of the page to retrieve.</param>
-		public bool GetMulti(ITransaction containingTransaction, IEntityCollection collectionToFill, long maxNumberOfItemsToReturn, ISortExpression sortClauses, IEntityFactory entityFactoryToUse, IPredicateExpression filter, IEntity employeeInstance, IEntity region_Instance, int pageNumber, int pageSize)
+		public bool GetMulti(ITransaction containingTransaction, IEntityCollection collectionToFill, long maxNumberOfItemsToReturn, ISortExpression sortClauses, IEntityFactory entityFactoryToUse, IPredicateExpression filter, IEntity employeeInstance, int pageNumber, int pageSize)
 		{
 			this.EntityFactoryToUse = entityFactoryToUse;
 			IEntityFields fieldsToReturn = EntityFieldsFactory.CreateEntityFieldsObject(Northwind.SSDAL.EntityType.EmployeeEntity);
-			IPredicateExpression selectFilter = CreateFilterUsingForeignKeys(employeeInstance, region_Instance, fieldsToReturn);
+			IPredicateExpression selectFilter = CreateFilterUsingForeignKeys(employeeInstance, fieldsToReturn);
 			if(filter!=null)
 			{
 				selectFilter.AddWithAnd(filter);
@@ -66,12 +64,11 @@ namespace Northwind.SSDAL.DaoClasses
 		/// <summary>Deletes from the persistent storage all 'Employee' entities which have data in common with the specified related Entities. If one is omitted, that entity is not used as a filter.</summary>
 		/// <param name="containingTransaction">A containing transaction, if caller is added to a transaction, or null if not.</param>
 		/// <param name="employeeInstance">EmployeeEntity instance to use as a filter for the EmployeeEntity objects to delete</param>
-		/// <param name="region_Instance">RegionEntity instance to use as a filter for the EmployeeEntity objects to delete</param>
 		/// <returns>Amount of entities affected, if the used persistent storage has rowcounting enabled.</returns>
-		public int DeleteMulti(ITransaction containingTransaction, IEntity employeeInstance, IEntity region_Instance)
+		public int DeleteMulti(ITransaction containingTransaction, IEntity employeeInstance)
 		{
 			IEntityFields fields = EntityFieldsFactory.CreateEntityFieldsObject(Northwind.SSDAL.EntityType.EmployeeEntity);
-			IPredicateExpression deleteFilter = CreateFilterUsingForeignKeys(employeeInstance, region_Instance, fields);
+			IPredicateExpression deleteFilter = CreateFilterUsingForeignKeys(employeeInstance, fields);
 			return this.DeleteMulti(containingTransaction, deleteFilter);
 		}
 
@@ -81,31 +78,25 @@ namespace Northwind.SSDAL.DaoClasses
 		/// <param name="entityWithNewValues">IEntity instance which holds the new values for the matching entities to update. Only changed fields are taken into account</param>
 		/// <param name="containingTransaction">A containing transaction, if caller is added to a transaction, or null if not.</param>
 		/// <param name="employeeInstance">EmployeeEntity instance to use as a filter for the EmployeeEntity objects to update</param>
-		/// <param name="region_Instance">RegionEntity instance to use as a filter for the EmployeeEntity objects to update</param>
 		/// <returns>Amount of entities affected, if the used persistent storage has rowcounting enabled.</returns>
-		public int UpdateMulti(IEntity entityWithNewValues, ITransaction containingTransaction, IEntity employeeInstance, IEntity region_Instance)
+		public int UpdateMulti(IEntity entityWithNewValues, ITransaction containingTransaction, IEntity employeeInstance)
 		{
 			IEntityFields fields = EntityFieldsFactory.CreateEntityFieldsObject(Northwind.SSDAL.EntityType.EmployeeEntity);
-			IPredicateExpression updateFilter = CreateFilterUsingForeignKeys(employeeInstance, region_Instance, fields);
+			IPredicateExpression updateFilter = CreateFilterUsingForeignKeys(employeeInstance, fields);
 			return this.UpdateMulti(entityWithNewValues, containingTransaction, updateFilter);
 		}
 
 		/// <summary>Creates a PredicateExpression which should be used as a filter when any combination of available foreign keys is specified.</summary>
 		/// <param name="employeeInstance">EmployeeEntity instance to use as a filter for the EmployeeEntity objects</param>
-		/// <param name="region_Instance">RegionEntity instance to use as a filter for the EmployeeEntity objects</param>
 		/// <param name="fieldsToReturn">IEntityFields implementation which forms the definition of the fieldset of the target entity.</param>
 		/// <returns>A ready to use PredicateExpression based on the passed in foreign key value holders.</returns>
-		private IPredicateExpression CreateFilterUsingForeignKeys(IEntity employeeInstance, IEntity region_Instance, IEntityFields fieldsToReturn)
+		private IPredicateExpression CreateFilterUsingForeignKeys(IEntity employeeInstance, IEntityFields fieldsToReturn)
 		{
 			IPredicateExpression selectFilter = new PredicateExpression();
 			
 			if(employeeInstance != null)
 			{
 				selectFilter.Add(new FieldCompareValuePredicate(fieldsToReturn[(int)EmployeeFieldIndex.ReportsTo], ComparisonOperator.Equal, ((EmployeeEntity)employeeInstance).EmployeeId));
-			}
-			if(region_Instance != null)
-			{
-				selectFilter.Add(new FieldCompareValuePredicate(fieldsToReturn[(int)EmployeeFieldIndex.RegionId], ComparisonOperator.Equal, ((RegionEntity)region_Instance).RegionId));
 			}
 			return selectFilter;
 		}
@@ -114,7 +105,6 @@ namespace Northwind.SSDAL.DaoClasses
 		
 		// __LLBLGENPRO_USER_CODE_REGION_START CustomDAOCode
 		// __LLBLGENPRO_USER_CODE_REGION_END
-		
 		#endregion
 		
 		#region Included Code

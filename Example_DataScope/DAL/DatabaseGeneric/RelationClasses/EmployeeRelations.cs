@@ -2,8 +2,8 @@
 // This is generated code. 
 //////////////////////////////////////////////////////////////
 // Code is generated using LLBLGen Pro version: 4.0
-// Code is generated on: maandag 2 juli 2012 15:42:07
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated on: woensdag 1 mei 2013 12:42:33
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -34,7 +34,6 @@ namespace Northwind.DAL.RelationClasses
 			toReturn.Add(this.EmployeeTerritoryEntityUsingEmployeeId);
 			toReturn.Add(this.OrderEntityUsingEmployeeId);
 			toReturn.Add(this.EmployeeEntityUsingEmployeeIdReportsTo);
-			toReturn.Add(this.RegionEntityUsingRegionId);
 			return toReturn;
 		}
 
@@ -100,20 +99,6 @@ namespace Northwind.DAL.RelationClasses
 				return relation;
 			}
 		}
-		/// <summary>Returns a new IEntityRelation object, between EmployeeEntity and RegionEntity over the m:1 relation they have, using the relation between the fields:
-		/// Employee.RegionId - Region.RegionId
-		/// </summary>
-		public virtual IEntityRelation RegionEntityUsingRegionId
-		{
-			get
-			{
-				IEntityRelation relation = new EntityRelation(SD.LLBLGen.Pro.ORMSupportClasses.RelationType.ManyToOne, "Region_", false);
-				relation.AddEntityFieldPair(RegionFields.RegionId, EmployeeFields.RegionId);
-				relation.InheritanceInfoPkSideEntity = InheritanceInfoProviderSingleton.GetInstance().GetInheritanceInfo("RegionEntity", false);
-				relation.InheritanceInfoFkSideEntity = InheritanceInfoProviderSingleton.GetInstance().GetInheritanceInfo("EmployeeEntity", true);
-				return relation;
-			}
-		}
 		/// <summary>stub, not used in this entity, only for TargetPerEntity entities.</summary>
 		public virtual IEntityRelation GetSubTypeRelation(string subTypeEntityName) { return null; }
 		/// <summary>stub, not used in this entity, only for TargetPerEntity entities.</summary>
@@ -132,7 +117,6 @@ namespace Northwind.DAL.RelationClasses
 		internal static readonly IEntityRelation EmployeeTerritoryEntityUsingEmployeeIdStatic = new EmployeeRelations().EmployeeTerritoryEntityUsingEmployeeId;
 		internal static readonly IEntityRelation OrderEntityUsingEmployeeIdStatic = new EmployeeRelations().OrderEntityUsingEmployeeId;
 		internal static readonly IEntityRelation EmployeeEntityUsingEmployeeIdReportsToStatic = new EmployeeRelations().EmployeeEntityUsingEmployeeIdReportsTo;
-		internal static readonly IEntityRelation RegionEntityUsingRegionIdStatic = new EmployeeRelations().RegionEntityUsingRegionId;
 
 		/// <summary>CTor</summary>
 		static StaticEmployeeRelations()

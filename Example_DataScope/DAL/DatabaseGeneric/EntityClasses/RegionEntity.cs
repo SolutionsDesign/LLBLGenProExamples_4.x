@@ -2,8 +2,8 @@
 // This is generated code. 
 //////////////////////////////////////////////////////////////
 // Code is generated using LLBLGen Pro version: 4.0
-// Code is generated on: maandag 2 juli 2012 15:42:07
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated on: woensdag 1 mei 2013 12:42:34
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -32,7 +32,6 @@ namespace Northwind.DAL.EntityClasses
 		// __LLBLGENPRO_USER_CODE_REGION_END	
 	{
 		#region Class Member Declarations
-		private EntityCollection<EmployeeEntity> _employees;
 		private EntityCollection<TerritoryEntity> _territories;
 
 		// __LLBLGENPRO_USER_CODE_REGION_START PrivateMembers
@@ -46,8 +45,6 @@ namespace Northwind.DAL.EntityClasses
 		/// <summary>All names of fields mapped onto a relation. Usable for in-memory filtering</summary>
 		public static partial class MemberNames
 		{
-			/// <summary>Member name Employees</summary>
-			public static readonly string Employees = "Employees";
 			/// <summary>Member name Territories</summary>
 			public static readonly string Territories = "Territories";
 		}
@@ -107,7 +104,6 @@ namespace Northwind.DAL.EntityClasses
 		{
 			if(SerializationHelper.Optimization != SerializationOptimization.Fast) 
 			{
-				_employees = (EntityCollection<EmployeeEntity>)info.GetValue("_employees", typeof(EntityCollection<EmployeeEntity>));
 				_territories = (EntityCollection<TerritoryEntity>)info.GetValue("_territories", typeof(EntityCollection<TerritoryEntity>));
 				this.FixupDeserialization(FieldInfoProviderSingleton.GetInstance());
 			}
@@ -124,9 +120,6 @@ namespace Northwind.DAL.EntityClasses
 		{
 			switch(propertyName)
 			{
-				case "Employees":
-					this.Employees.Add((EmployeeEntity)entity);
-					break;
 				case "Territories":
 					this.Territories.Add((TerritoryEntity)entity);
 					break;
@@ -152,9 +145,6 @@ namespace Northwind.DAL.EntityClasses
 			RelationCollection toReturn = new RelationCollection();
 			switch(fieldName)
 			{
-				case "Employees":
-					toReturn.Add(Relations.EmployeeEntityUsingRegionId);
-					break;
 				case "Territories":
 					toReturn.Add(Relations.TerritoryEntityUsingRegionId);
 					break;
@@ -186,9 +176,6 @@ namespace Northwind.DAL.EntityClasses
 		{
 			switch(fieldName)
 			{
-				case "Employees":
-					this.Employees.Add((EmployeeEntity)relatedEntity);
-					break;
 				case "Territories":
 					this.Territories.Add((TerritoryEntity)relatedEntity);
 					break;
@@ -205,9 +192,6 @@ namespace Northwind.DAL.EntityClasses
 		{
 			switch(fieldName)
 			{
-				case "Employees":
-					this.PerformRelatedEntityRemoval(this.Employees, relatedEntity, signalRelatedEntityManyToOne);
-					break;
 				case "Territories":
 					this.PerformRelatedEntityRemoval(this.Territories, relatedEntity, signalRelatedEntityManyToOne);
 					break;
@@ -238,7 +222,6 @@ namespace Northwind.DAL.EntityClasses
 		protected override List<IEntityCollection2> GetMemberEntityCollections()
 		{
 			List<IEntityCollection2> toReturn = new List<IEntityCollection2>();
-			toReturn.Add(this.Employees);
 			toReturn.Add(this.Territories);
 			return toReturn;
 		}
@@ -251,7 +234,6 @@ namespace Northwind.DAL.EntityClasses
 		{
 			if (SerializationHelper.Optimization != SerializationOptimization.Fast) 
 			{
-				info.AddValue("_employees", ((_employees!=null) && (_employees.Count>0) && !this.MarkedForDeletion)?_employees:null);
 				info.AddValue("_territories", ((_territories!=null) && (_territories.Count>0) && !this.MarkedForDeletion)?_territories:null);
 			}
 			// __LLBLGENPRO_USER_CODE_REGION_START GetObjectInfo
@@ -266,15 +248,6 @@ namespace Northwind.DAL.EntityClasses
 		protected override List<IEntityRelation> GetAllRelations()
 		{
 			return new RegionRelations().GetAllRelations();
-		}
-
-		/// <summary> Creates a new IRelationPredicateBucket object which contains the predicate expression and relation collection to fetch the related entities of type 'Employee' to this entity.</summary>
-		/// <returns></returns>
-		public virtual IRelationPredicateBucket GetRelationInfoEmployees()
-		{
-			IRelationPredicateBucket bucket = new RelationPredicateBucket();
-			bucket.PredicateExpression.Add(new FieldCompareValuePredicate(EmployeeFields.RegionId, null, ComparisonOperator.Equal, this.RegionId));
-			return bucket;
 		}
 
 		/// <summary> Creates a new IRelationPredicateBucket object which contains the predicate expression and relation collection to fetch the related entities of type 'Territory' to this entity.</summary>
@@ -298,7 +271,6 @@ namespace Northwind.DAL.EntityClasses
 		protected override void AddToMemberEntityCollectionsQueue(Queue<IEntityCollection2> collectionsQueue) 
 		{
 			base.AddToMemberEntityCollectionsQueue(collectionsQueue);
-			collectionsQueue.Enqueue(this._employees);
 			collectionsQueue.Enqueue(this._territories);
 		}
 		
@@ -307,7 +279,6 @@ namespace Northwind.DAL.EntityClasses
 		protected override void GetFromMemberEntityCollectionsQueue(Queue<IEntityCollection2> collectionsQueue)
 		{
 			base.GetFromMemberEntityCollectionsQueue(collectionsQueue);
-			this._employees = (EntityCollection<EmployeeEntity>) collectionsQueue.Dequeue();
 			this._territories = (EntityCollection<TerritoryEntity>) collectionsQueue.Dequeue();
 
 		}
@@ -317,7 +288,6 @@ namespace Northwind.DAL.EntityClasses
 		protected override bool HasPopulatedMemberEntityCollections()
 		{
 			bool toReturn = false;
-			toReturn |=(this._employees != null);
 			toReturn |=(this._territories != null);
 			return toReturn ? true : base.HasPopulatedMemberEntityCollections();
 		}
@@ -328,7 +298,6 @@ namespace Northwind.DAL.EntityClasses
 		protected override void CreateMemberEntityCollectionsQueue(Queue<IEntityCollection2> collectionsQueue, Queue<bool> requiredQueue) 
 		{
 			base.CreateMemberEntityCollectionsQueue(collectionsQueue, requiredQueue);
-			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<EmployeeEntity>(EntityFactoryCache2.GetEntityFactory(typeof(EmployeeEntityFactory))) : null);
 			collectionsQueue.Enqueue(requiredQueue.Dequeue() ? new EntityCollection<TerritoryEntity>(EntityFactoryCache2.GetEntityFactory(typeof(TerritoryEntityFactory))) : null);
 		}
 #endif
@@ -337,7 +306,6 @@ namespace Northwind.DAL.EntityClasses
 		protected override Dictionary<string, object> GetRelatedData()
 		{
 			Dictionary<string, object> toReturn = new Dictionary<string, object>();
-			toReturn.Add("Employees", _employees);
 			toReturn.Add("Territories", _territories);
 			return toReturn;
 		}
@@ -398,13 +366,6 @@ namespace Northwind.DAL.EntityClasses
 			get { return _customProperties;}
 		}
 
-		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Employee' for this entity.</summary>
-		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
-		public static IPrefetchPathElement2 PrefetchPathEmployees
-		{
-			get	{ return new PrefetchPathElement2( new EntityCollection<EmployeeEntity>(EntityFactoryCache2.GetEntityFactory(typeof(EmployeeEntityFactory))), (IEntityRelation)GetRelationsForField("Employees")[0], (int)Northwind.DAL.EntityType.RegionEntity, (int)Northwind.DAL.EntityType.EmployeeEntity, 0, null, null, null, null, "Employees", SD.LLBLGen.Pro.ORMSupportClasses.RelationType.OneToMany);	}
-		}
-
 		/// <summary> Creates a new PrefetchPathElement2 object which contains all the information to prefetch the related entities of type 'Territory' for this entity.</summary>
 		/// <returns>Ready to use IPrefetchPathElement2 implementation.</returns>
 		public static IPrefetchPathElement2 PrefetchPathTerritories
@@ -454,13 +415,6 @@ namespace Northwind.DAL.EntityClasses
 		{
 			get { return (System.Int32)GetValue((int)RegionFieldIndex.RegionId, true); }
 			set	{ SetValue((int)RegionFieldIndex.RegionId, value); }
-		}
-
-		/// <summary> Gets the EntityCollection with the related entities of type 'EmployeeEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>
-		[TypeContainedAttribute(typeof(EmployeeEntity))]
-		public virtual EntityCollection<EmployeeEntity> Employees
-		{
-			get { return GetOrCreateEntityCollection<EmployeeEntity, EmployeeEntityFactory>("Region_", true, false, ref _employees);	}
 		}
 
 		/// <summary> Gets the EntityCollection with the related entities of type 'TerritoryEntity' which are related to this entity via a relation of type '1:n'. If the EntityCollection hasn't been fetched yet, the collection returned will be empty.<br/><br/></summary>

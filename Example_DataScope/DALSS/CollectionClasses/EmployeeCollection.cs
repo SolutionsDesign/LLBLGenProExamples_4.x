@@ -2,8 +2,8 @@
 // This is generated code. 
 //////////////////////////////////////////////////////////////
 // Code is generated using LLBLGen Pro version: 4.0
-// Code is generated on: donderdag 19 juli 2012 13:46:12
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated on: woensdag 1 mei 2013 12:43:11
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
@@ -27,7 +27,6 @@ namespace Northwind.SSDAL.CollectionClasses
 	
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
 	// __LLBLGENPRO_USER_CODE_REGION_END
-	
 
 	/// <summary>Collection class for storing and retrieving collections of EmployeeEntity objects. </summary>
 	[Serializable]
@@ -62,52 +61,47 @@ namespace Northwind.SSDAL.CollectionClasses
 		/// <summary> Retrieves in this EmployeeCollection object all EmployeeEntity objects which have data in common with the specified related Entities.
 		/// If one is omitted, that entity is not used as a filter. All current elements in the collection are removed from the collection.</summary>
 		/// <param name="employeeInstance">EmployeeEntity instance to use as a filter for the EmployeeEntity objects to return</param>
-		/// <param name="region_Instance">RegionEntity instance to use as a filter for the EmployeeEntity objects to return</param>
 		/// <returns>true if succeeded, false otherwise</returns>
-		public bool GetMultiManyToOne(IEntity employeeInstance, IEntity region_Instance)
+		public bool GetMultiManyToOne(IEntity employeeInstance)
 		{
-			return GetMultiManyToOne(employeeInstance, region_Instance, this.MaxNumberOfItemsToReturn, this.SortClauses, null, 0, 0);
+			return GetMultiManyToOne(employeeInstance, this.MaxNumberOfItemsToReturn, this.SortClauses, null, 0, 0);
 		}
 
 		/// <summary> Retrieves in this EmployeeCollection object all EmployeeEntity objects which have data in common with the specified related Entities.
 		/// If one is omitted, that entity is not used as a filter. All current elements in the collection are removed from the collection.</summary>
 		/// <param name="employeeInstance">EmployeeEntity instance to use as a filter for the EmployeeEntity objects to return</param>
-		/// <param name="region_Instance">RegionEntity instance to use as a filter for the EmployeeEntity objects to return</param>
 		/// <param name="filter">Extra filter to limit the resultset. Predicate expression can be null, in which case it will be ignored.</param>
 		/// <returns>true if succeeded, false otherwise</returns>
-		public bool GetMultiManyToOne(IEntity employeeInstance, IEntity region_Instance, IPredicateExpression filter)
+		public bool GetMultiManyToOne(IEntity employeeInstance, IPredicateExpression filter)
 		{
-			return GetMultiManyToOne(employeeInstance, region_Instance, this.MaxNumberOfItemsToReturn, this.SortClauses, filter, 0, 0);
+			return GetMultiManyToOne(employeeInstance, this.MaxNumberOfItemsToReturn, this.SortClauses, filter, 0, 0);
 		}
 
 		/// <summary> Retrieves in this EmployeeCollection object all EmployeeEntity objects which have data in common with the specified related Entities.
 		/// If one is omitted, that entity is not used as a filter. All current elements in the collection are removed from the collection.</summary>
 		/// <param name="employeeInstance">EmployeeEntity instance to use as a filter for the EmployeeEntity objects to return</param>
-		/// <param name="region_Instance">RegionEntity instance to use as a filter for the EmployeeEntity objects to return</param>
 		/// <param name="maxNumberOfItemsToReturn"> The maximum number of items to return with this retrieval query.</param>
 		/// <param name="sortClauses">The order by specifications for the sorting of the resultset. When not specified, no sorting is applied.</param>
 		/// <param name="filter">Extra filter to limit the resultset. Predicate expression can be null, in which case it will be ignored.</param>
 		/// <returns>true if succeeded, false otherwise</returns>
-		public bool GetMultiManyToOne(IEntity employeeInstance, IEntity region_Instance, long maxNumberOfItemsToReturn, ISortExpression sortClauses, IPredicateExpression filter)
+		public bool GetMultiManyToOne(IEntity employeeInstance, long maxNumberOfItemsToReturn, ISortExpression sortClauses, IPredicateExpression filter)
 		{
-			return GetMultiManyToOne(employeeInstance, region_Instance, maxNumberOfItemsToReturn, sortClauses, filter, 0, 0);
+			return GetMultiManyToOne(employeeInstance, maxNumberOfItemsToReturn, sortClauses, filter, 0, 0);
 		}
 
 		/// <summary> Retrieves in this EmployeeCollection object all EmployeeEntity objects which have data in common with the specified related Entities.
 		/// If one is omitted, that entity is not used as a filter. All current elements in the collection are removed from the collection.</summary>
 		/// <param name="employeeInstance">EmployeeEntity instance to use as a filter for the EmployeeEntity objects to return</param>
-		/// <param name="region_Instance">RegionEntity instance to use as a filter for the EmployeeEntity objects to return</param>
 		/// <param name="maxNumberOfItemsToReturn"> The maximum number of items to return with this retrieval query.</param>
 		/// <param name="sortClauses">The order by specifications for the sorting of the resultset. When not specified, no sorting is applied.</param>
 		/// <param name="filter">Extra filter to limit the resultset. Predicate expression can be null, in which case it will be ignored.</param>
 		/// <param name="pageNumber">The page number to retrieve.</param>
 		/// <param name="pageSize">The page size of the page to retrieve.</param>
 		/// <returns>true if succeeded, false otherwise</returns>
-		public virtual bool GetMultiManyToOne(IEntity employeeInstance, IEntity region_Instance, long maxNumberOfItemsToReturn, ISortExpression sortClauses, IPredicateExpression filter, int pageNumber, int pageSize)
+		public virtual bool GetMultiManyToOne(IEntity employeeInstance, long maxNumberOfItemsToReturn, ISortExpression sortClauses, IPredicateExpression filter, int pageNumber, int pageSize)
 		{
 			bool validParameters = false;
 			validParameters |= (employeeInstance!=null);
-			validParameters |= (region_Instance!=null);
 			if(!validParameters)
 			{
 				return GetMulti(filter, maxNumberOfItemsToReturn, sortClauses, null, pageNumber, pageSize);
@@ -116,28 +110,26 @@ namespace Northwind.SSDAL.CollectionClasses
 			{
 				this.Clear();
 			}
-			return DAOFactory.CreateEmployeeDAO().GetMulti(this.Transaction, this, maxNumberOfItemsToReturn, sortClauses, this.EntityFactoryToUse, filter, employeeInstance, region_Instance, pageNumber, pageSize);
+			return DAOFactory.CreateEmployeeDAO().GetMulti(this.Transaction, this, maxNumberOfItemsToReturn, sortClauses, this.EntityFactoryToUse, filter, employeeInstance, pageNumber, pageSize);
 		}
 
 		/// <summary> Deletes from the persistent storage all Employee entities which have data in common with the specified related Entities. If one is omitted, that entity is not used as a filter.</summary>
 		/// <remarks>Runs directly on the persistent storage. It will not delete entity objects from the current collection.</remarks>
 		/// <param name="employeeInstance">EmployeeEntity instance to use as a filter for the EmployeeEntity objects to return</param>
-		/// <param name="region_Instance">RegionEntity instance to use as a filter for the EmployeeEntity objects to return</param>
 		/// <returns>Amount of entities affected, if the used persistent storage has rowcounting enabled.</returns>
-		public int DeleteMultiManyToOne(IEntity employeeInstance, IEntity region_Instance)
+		public int DeleteMultiManyToOne(IEntity employeeInstance)
 		{
-			return DAOFactory.CreateEmployeeDAO().DeleteMulti(this.Transaction, employeeInstance, region_Instance);
+			return DAOFactory.CreateEmployeeDAO().DeleteMulti(this.Transaction, employeeInstance);
 		}
 
 		/// <summary> Updates in the persistent storage all Employee entities which have data in common with the specified related Entities. If one is omitted, that entity is not used as a filter.
 		/// Which fields are updated in those matching entities depends on which fields are <i>changed</i> in the passed in entity entityWithNewValues. The new values of these fields are read from entityWithNewValues. </summary>
 		/// <param name="entityWithNewValues">EmployeeEntity instance which holds the new values for the matching entities to update. Only changed fields are taken into account</param>
 		/// <param name="employeeInstance">EmployeeEntity instance to use as a filter for the EmployeeEntity objects to return</param>
-		/// <param name="region_Instance">RegionEntity instance to use as a filter for the EmployeeEntity objects to return</param>
 		/// <returns>Amount of entities affected, if the used persistent storage has rowcounting enabled.</returns>
-		public int UpdateMultiManyToOne(EmployeeEntity entityWithNewValues, IEntity employeeInstance, IEntity region_Instance)
+		public int UpdateMultiManyToOne(EmployeeEntity entityWithNewValues, IEntity employeeInstance)
 		{
-			return DAOFactory.CreateEmployeeDAO().UpdateMulti(entityWithNewValues, this.Transaction, employeeInstance, region_Instance);
+			return DAOFactory.CreateEmployeeDAO().UpdateMulti(entityWithNewValues, this.Transaction, employeeInstance);
 		}
 
 
@@ -261,7 +253,6 @@ namespace Northwind.SSDAL.CollectionClasses
 		
 		// __LLBLGENPRO_USER_CODE_REGION_START CustomEntityCollectionCode
 		// __LLBLGENPRO_USER_CODE_REGION_END
-		
 		#endregion
 		
 		#region Included Code

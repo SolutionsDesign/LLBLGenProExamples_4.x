@@ -2,18 +2,18 @@
 // This is generated code. 
 //////////////////////////////////////////////////////////////
 // Code is generated using LLBLGen Pro version: 4.0
-// Code is generated on: donderdag 19 juli 2012 13:46:12
-// Code is generated using templates: SD.TemplateBindings.SharedTemplates.NET20
+// Code is generated on: woensdag 1 mei 2013 12:43:13
+// Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
 //////////////////////////////////////////////////////////////
 using System;
 using System.Collections.Generic;
 using Northwind.SSDAL.HelperClasses;
-
-using Northwind.SSDAL.EntityClasses;
 using Northwind.SSDAL.RelationClasses;
 using Northwind.SSDAL.DaoClasses;
+
+using Northwind.SSDAL.EntityClasses;
 using Northwind.SSDAL.CollectionClasses;
 using SD.LLBLGen.Pro.ORMSupportClasses;
 
@@ -21,7 +21,6 @@ namespace Northwind.SSDAL.FactoryClasses
 {
 	// __LLBLGENPRO_USER_CODE_REGION_START AdditionalNamespaces
 	// __LLBLGENPRO_USER_CODE_REGION_END
-	
 	/// <summary>general base class for the generated factories</summary>
 	[Serializable]
 	public partial class EntityFactoryBase : EntityFactoryCore
@@ -89,7 +88,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewAuditActionType
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -112,7 +110,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewAuditInfo
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -141,7 +138,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewCategory
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -164,7 +160,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewCustomer
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -187,7 +182,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewCustomerCustomerDemo
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -210,7 +204,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewCustomerDemographic
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -233,7 +226,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewEmployee
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -256,7 +248,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewEmployeeTerritory
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -279,7 +270,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewGroup
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -302,7 +292,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewOrder
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -325,7 +314,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewOrderAuditInfo
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -354,7 +342,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewOrderDetail
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -377,7 +364,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewProduct
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -400,7 +386,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewRegion
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -423,7 +408,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewShipper
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -446,7 +430,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewSupplier
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -469,7 +452,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewTerritory
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -492,7 +474,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewUser
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -515,7 +496,6 @@ namespace Northwind.SSDAL.FactoryClasses
 			
 			// __LLBLGENPRO_USER_CODE_REGION_START CreateNewUserGroup
 			// __LLBLGENPRO_USER_CODE_REGION_END
-			
 			return toReturn;
 		}
 
@@ -663,15 +643,6 @@ namespace Northwind.SSDAL.FactoryClasses
 	[Serializable]
 	public static class EntityFactoryFactory
 	{
-#if CF
-		/// <summary>Gets the factory of the entity with the Northwind.SSDAL.EntityType specified</summary>
-		/// <param name="typeOfEntity">The type of entity.</param>
-		/// <returns>factory to use or null if not found</returns>
-		public static IEntityFactory GetFactory(Northwind.SSDAL.EntityType typeOfEntity)
-		{
-			return GeneralEntityFactory.Create(typeOfEntity).GetEntityFactory();
-		}
-#else
 		private static readonly Dictionary<Type, IEntityFactory> _factoryPerType = new Dictionary<Type, IEntityFactory>();
 
 		/// <summary>Initializes the <see cref="EntityFactoryFactory"/> class.</summary>
@@ -702,7 +673,6 @@ namespace Northwind.SSDAL.FactoryClasses
 		{
 			return GetFactory(GeneralEntityFactory.Create(typeOfEntity).GetType());
 		}
-#endif
 	}
 	
 	/// <summary>Element creator for creating project elements from somewhere else, like inside Linq providers.</summary>
@@ -757,6 +727,13 @@ namespace Northwind.SSDAL.FactoryClasses
 		{
 			return new DynamicRelation(leftOperand, joinType, rightOperand, onClause);
 		}
+		
+		/// <summary>Obtains the inheritance info provider instance from the singleton </summary>
+		/// <returns>The singleton instance of the inheritance info provider</returns>
+		public override IInheritanceInfoProvider ObtainInheritanceInfoProviderInstance()
+		{
+			return InheritanceInfoProviderSingleton.GetInstance();
+		}
 
 		/// <summary>Creates a new dynamic relation instance</summary>
 		/// <param name="leftOperand">The left operand.</param>
@@ -782,13 +759,6 @@ namespace Northwind.SSDAL.FactoryClasses
 		{
 			return new DynamicRelation((Northwind.SSDAL.EntityType)Enum.Parse(typeof(Northwind.SSDAL.EntityType), leftOperandEntityName, false), joinType, (Northwind.SSDAL.EntityType)Enum.Parse(typeof(Northwind.SSDAL.EntityType), rightOperandEntityName, false), aliasLeftOperand, aliasRightOperand, onClause);
 		}
-				
-		/// <summary>Obtains the inheritance info provider instance from the singleton </summary>
-		/// <returns>The singleton instance of the inheritance info provider</returns>
-		public override IInheritanceInfoProvider ObtainInheritanceInfoProviderInstance()
-		{
-			return InheritanceInfoProviderSingleton.GetInstance();
-		}
 
 		/// <summary>Implementation of the routine which gets the factory of the Entity type with the Northwind.SSDAL.EntityType value passed in</summary>
 		/// <param name="entityTypeValue">The entity type value.</param>
@@ -797,7 +767,7 @@ namespace Northwind.SSDAL.FactoryClasses
 		{
 			return EntityFactoryFactory.GetFactory((Northwind.SSDAL.EntityType)entityTypeValue);
 		}
-#if !CF		
+	
 		/// <summary>Implementation of the routine which gets the factory of the Entity type with the .NET type passed in</summary>
 		/// <param name="typeOfEntity">The type of entity.</param>
 		/// <returns>the entity factory of the entity type or null if not found</returns>
@@ -805,6 +775,6 @@ namespace Northwind.SSDAL.FactoryClasses
 		{
 			return EntityFactoryFactory.GetFactory(typeOfEntity);
 		}
-#endif
+
 	}
 }
