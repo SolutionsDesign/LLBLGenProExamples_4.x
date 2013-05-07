@@ -544,7 +544,6 @@ namespace Northwind.GUI
 			// save the changes to the persistent storage.
 			using(var adapter = new DataAccessAdapter())
 			{
-				adapter.StartTransaction(System.Data.IsolationLevel.ReadCommitted, "BOTrans");
 				bool succeeded = _customerScope.CommitChanges(adapter);
 				if(succeeded)
 				{
