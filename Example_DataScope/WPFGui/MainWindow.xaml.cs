@@ -79,5 +79,11 @@ namespace Northwind.WPFGui
 			var manager = new CustomerManager(_customerWithMostOrders);
 			manager.ShowDialog();
 		}
+
+		private void _openCustomerManagerButton_Click(object sender, RoutedEventArgs e)
+		{
+			var manager = new CustomerManager();
+			manager.ShowDialog();
+		}
 	}
 }

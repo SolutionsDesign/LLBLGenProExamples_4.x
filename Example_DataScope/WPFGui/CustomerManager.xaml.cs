@@ -68,7 +68,19 @@ namespace Northwind.WPFGui
 			_customerScope.FetchData();
 			BindCustomerToGui();
 		}
-		
+
+
+		private void SelectNewCustomer()
+		{
+			CustomerSelector selector = new CustomerSelector();
+			var dialogResult = selector.ShowDialog() ?? false;
+			if(!dialogResult)
+			{
+				return;
+			}
+			SetCustomerAsCurrent(selector.SelectedCustomer);
+		}
+
 
 		private void _customerScope_ScopedDataChanged(object sender, EventArgs e)
 		{
@@ -94,5 +106,9 @@ namespace Northwind.WPFGui
 
 		}
 
+		private void _selectCustomerButton_Click(object sender, RoutedEventArgs e)
+		{
+			SelectNewCustomer();
+		}
 	}
 }

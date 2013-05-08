@@ -46,7 +46,7 @@
         <Button Content="Exit" Margin="0,0,10,10" HorizontalAlignment="Right" Width="73" Height="24" VerticalAlignment="Bottom" Name="_exitButton" Click="_exitButton_Click"/>
         <StackPanel HorizontalAlignment="Left" Height="112" Margin="10,10,0,0" VerticalAlignment="Top" Width="264">
             <Label Content="Please select your option below"/>
-            <Button Content="Open the Customer Manager" Margin="0,4,0,0"/>
+            <Button Content="Open the Customer Manager" Name="_openCustomerManagerButton" Margin="0,4,0,0" Click="_openCustomerManagerButton_Click"/>
             <Button Content="Open the Customers-by-product Lister" Margin="0,4,0,0" Name="_openCustomersByProductListerButton" Click="_openCustomersByProductListerButton_Click"/>
         </StackPanel>
     </Grid>

@@ -39,7 +39,7 @@
                 <TextBox x:Name="contactTitleTextBox" Width="120" VerticalAlignment="Center" Text="{Binding ContactTitle, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Margin="3,4.08,0,4.88" Height="23" HorizontalAlignment="Left" Grid.Column="1"/>
                 <Label VerticalAlignment="Center" Grid.Column="2" Grid.Row="3" Margin="4,3.08,0,2.88" HorizontalAlignment="Left" Content="Contact Name" Height="26" Width="86"/>
                 <TextBox x:Name="contactNameTextBox" VerticalAlignment="Center" Text="{Binding ContactName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Margin="4,4.08,5.828,4.88" Height="23" Grid.Column="3"/>
-                <Button Name="_selectCustomerButton" Grid.Column="2" Grid.Row="0" Content="Select..." Height="23" VerticalAlignment="Top" Margin="0,4,59,0"/>
+                <Button Name="_selectCustomerButton" Grid.Column="2" Grid.Row="0" Content="Select..." Height="23" VerticalAlignment="Top" Margin="0,4,59,0" Click="_selectCustomerButton_Click"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="Customer's Orders" Margin="10,149,13,46">
@@ -101,6 +101,6 @@
                 </GroupBox>
             </Grid>
         </GroupBox>
-        <Button Content="Save changes" Name="_saveChangesButton" HorizontalAlignment="Right" Width="102" Height="30" VerticalAlignment="Bottom" Margin="0,0,13,9.85" Click="_saveChangesButton_Click"/>
+        <Button Content="Save changes" Name="_saveChangesButton" HorizontalAlignment="Right" Width="102" Height="30" VerticalAlignment="Bottom" Margin="0,0,13,9.85" Click="_saveChangesButton_Click" IsEnabled="False"/>
     </Grid>
 </Window>
