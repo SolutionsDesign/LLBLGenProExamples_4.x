@@ -19,7 +19,6 @@ using Northwind.DAL.DatabaseSpecific;
 using Northwind.DAL.EntityClasses;
 using Northwind.DAL.HelperClasses;
 using SD.LLBLGen.Pro.ORMSupportClasses;
-using SD.Tools.OrmProfiler.Interceptor;
 
 namespace Northwind.WPFGui
 {
@@ -32,7 +31,6 @@ namespace Northwind.WPFGui
 
 		public MainWindow()
 		{
-			InterceptorCore.Initialize("WPF");
 			InitializeComponent();
 			this.Language = XmlLanguage.GetLanguage(Thread.CurrentThread.CurrentCulture.Name);
 			CalculateStatistics();
