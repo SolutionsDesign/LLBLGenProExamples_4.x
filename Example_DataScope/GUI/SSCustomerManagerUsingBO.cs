@@ -16,8 +16,6 @@ namespace Northwind.GUI
 	/// The customer manager. It allows you to manage a customer's data and its orders and that orders' orderdetails.
 	/// It illustrates complex databinding (master-detail), events, sorting, fields mapped on relations (Customer.Orders ..), 
 	/// transactions and validation.
-	/// The code can seem somewhat complex at first, that's because a lot of maintainance is done to keep all the eventhandlers correct,
-	/// log which collections are dirty, which have been visited (for the eventhandlers) etc. 
 	/// </summary>
 	public class SSCustomerManagerUsingBO : System.Windows.Forms.Form
 	{

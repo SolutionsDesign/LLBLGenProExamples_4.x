@@ -90,11 +90,11 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SD.LLBLGen.Pro.DQE.SqlServer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+    <Reference Include="SD.LLBLGen.Pro.DQE.SqlServer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\UnitTests\LLBLGen Pro\RuntimeLibraries\SD.LLBLGen.Pro.DQE.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=4.0.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
+    <Reference Include="SD.LLBLGen.Pro.ORMSupportClasses, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ca73b74ba4e3ff27, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\UnitTests\LLBLGen Pro\RuntimeLibraries\SD.LLBLGen.Pro.ORMSupportClasses.dll</HintPath>
     </Reference>
