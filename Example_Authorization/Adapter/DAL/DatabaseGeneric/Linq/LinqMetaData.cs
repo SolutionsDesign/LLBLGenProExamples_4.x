@@ -1,8 +1,8 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.0
-// Code is generated on: dinsdag 23 april 2013 10:19:15
+// Code is generated using LLBLGen Pro version: 4.1
+// Code is generated on: donderdag 7 november 2013 13:14:09
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 //////////////////////////////////////////////////////////////
@@ -87,6 +87,15 @@ namespace SD.LLBLGen.Pro.Examples.Authorization.Linq
 					break;
 			}
 			return toReturn;
+		}
+
+		/// <summary>returns the datasource to use in a Linq query for the entity type specified</summary>
+		/// <typeparam name="TEntity">the type of the entity to get the datasource for</typeparam>
+		/// <returns>the requested datasource</returns>
+		public DataSource2<TEntity> GetQueryableForEntity<TEntity>()
+			    where TEntity : class
+		{
+    		return new DataSource2<TEntity>(_adapterToUse, new ElementCreator(), _customFunctionMappings, _contextToUse);
 		}
 
 		/// <summary>returns the datasource to use in a Linq query when targeting CustomersEntity instances in the database.</summary>

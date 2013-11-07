@@ -173,7 +173,6 @@ namespace SD.LLBLGen.Pro.Examples.Authorization.Authorizers
                 }
                 // No restrictions for other fields.
                 // Note: Only Sales members can Insert/Update OrderDetails.
-                // Deny
                 return true;
             }
 
