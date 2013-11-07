@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////
-// LLBLGen Pro v4.0 - Auditing Example
+// LLBLGen Pro v4.x - Auditing Example
 //////////////////////////////////////////////////////////////
-// This code uses LLBLGen Pro version: 4.0
+// This code uses LLBLGen Pro version: 4.x
 //////////////////////////////////////////////////////////////
 
 using System;
@@ -18,7 +18,7 @@ namespace SD.LLBLGen.Pro.Examples.Auditing.Auditors
 {
     /// <summary>
 	/// Auditor class intended to demonstrate how to successfully audit entity information
-	/// to the dataBase using LLBLGenPro v4.0 Auditor Dependency Injection.
+	/// to the dataBase using LLBLGenPro v4.x Auditor Dependency Injection.
     /// </summary>
     /// <remarks>
     /// This Auditor is injected to CustomerEntity instances.

@@ -4,7 +4,7 @@
 	<tr>
         <td class="darkbackground" colspan="3">
 			<h1>
-                LLBLGenPro v4.0 Auditing Example</h1>
+                LLBLGenPro v4.x Auditing Example</h1>
         </td>
 	</tr>
 	<tr>

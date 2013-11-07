@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////
-// LLBLGen Pro v4.0 - Auditing Example
+// LLBLGen Pro v4.x - Auditing Example
 //////////////////////////////////////////////////////////////
-// This code uses LLBLGen Pro version: 4.0
+// This code uses LLBLGen Pro version: 4.x
 //////////////////////////////////////////////////////////////
 
 using System;
@@ -18,7 +18,7 @@ namespace SD.LLBLGen.Pro.Examples.Auditing.Auditors
 	/// to the DataBase. We used OrderAuditInfo which inherits from AuditInfo. OrderAuditInfo references
 	/// the given OrderEntity so we can save specific Order audit info. This allows us to reference in
 	/// database the audited order object. This tracking doesn't apply for delete action.
-	/// This example uses LLBLGenPro v4.0 Auditor Dependency Injection.
+	/// This example uses LLBLGenPro v4.x Auditor Dependency Injection.
     /// </summary>
     /// <remarks>
     /// This Auditor is injected to OrderEntity instances.

@@ -3,7 +3,7 @@
 <table width="100%" cellpadding="5" cellspacing="0" border="0">
 	<tr>
 		<td class="darkbackground">
-			<h1>LLBLGenPro v4.0 Auditing Example</h1>
+			<h1>LLBLGenPro v4.x Auditing Example</h1>
 		</td>
 	</tr>
 	<tr>

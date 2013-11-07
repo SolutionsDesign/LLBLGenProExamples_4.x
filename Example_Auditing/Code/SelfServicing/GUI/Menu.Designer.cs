@@ -89,9 +89,9 @@ namespace SD.LLBLGen.Pro.Examples.Auditing.GUI
 			this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblTitle.Location = new System.Drawing.Point(12, 21);
 			this.lblTitle.Name = "lblTitle";
-			this.lblTitle.Size = new System.Drawing.Size(477, 31);
+			this.lblTitle.Size = new System.Drawing.Size(475, 31);
 			this.lblTitle.TabIndex = 4;
-			this.lblTitle.Text = "LLBLGenPro v4.0 Auditing Example";
+			this.lblTitle.Text = "LLBLGenPro v4.x Auditing Example";
 			// 
 			// label1
 			// 
