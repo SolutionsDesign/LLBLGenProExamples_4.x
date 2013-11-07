@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!--LLBLGen Pro v4.0 project file. Do not manually edit this file. Incorrect references could lead to an unloadable project file.-->
-<Project Version="4.0" TargetFrameworkName="LLBLGen Pro Runtime Framework">
+<!--LLBLGen Pro v4.1 project file. Do not manually edit this file. Incorrect references could lead to an unloadable project file.-->
+<Project Version="4.1" TargetFrameworkName="LLBLGen Pro Runtime Framework">
   <Properties>
     <Abbreviations />
     <Property Name="AdditionalTaskPerformerFolder" Value="" />
@@ -38,6 +38,7 @@
     <Property Name="NonExcludableOrphanedElementDetectedAction" Value="3" />
     <Property Name="PreferDecimalOverCurrencyTypes" Value="true" />
     <Property Name="PreferNaturalCharacterTypes" Value="true" />
+    <Property Name="PreferSystemSequencesOverSchemaSequencesIfApplicable" Value="true" />
     <Property Name="PreferVariableLengthTypes" Value="true" />
     <Property Name="ProjectCreator" Value="DE" />
     <Property Name="ProjectName" Value="Validation Example" />
@@ -71,17 +72,17 @@
   <CodeGenerationCyclePreferences>
     <OutputType Value="3">
       <LastUsedPreferences>
-        <DestinationRootFolder Value="C:\Myprojects\VS.NET Projects\LLBLGen Pro v3.1\Examples\Example_Validation\code\SelfServicing\DAL" />
+        <DestinationRootFolder Value="C:\Myprojects\VS.NET Projects\GitHub\SolutionsDesign\LLBLGenProExamples_4.x\Example_Validation\code\Adapter Example\DAL" />
         <FrameworkName Value="LLBLGen Pro Runtime Framework" />
         <LanguageName Value="C#" />
         <PlatformName Value=".NET 3.5" />
-        <PresetName Value="SD.Presets.SelfServicing.General2008" />
+        <PresetName Value="SD.Presets.Adapter.General" />
         <RootNamespace Value="SD.LLBLGen.Pro.Examples" />
-        <TemplateGroup Value="SelfServicing" />
+        <TemplateGroup Value="Adapter" />
         <TemplateBindings>
+          <Binding Name="SD.TemplateBindings.SqlServerSpecific" />
+          <Binding Name="SD.TemplateBindings.SharedTemplates" />
           <Binding Name="SD.TemplateBindings.SharedTemplates.NET35" />
-          <Binding Name="SD.TemplateBindings.SqlServerSpecific.NET20" />
-          <Binding Name="SD.TemplateBindings.SharedTemplates.NET20" />
           <Binding Name="SD.TemplateBindings.General" />
         </TemplateBindings>
       </LastUsedPreferences>
@@ -102,11 +103,11 @@
   </OutputSettingValues>
   <CodeGenerationMetaDataDefaults>
     <TargetElement Type="256">
-      <OutputSettingValues>
+      <Defaults>
         <Attributes>
           <Attribute Value="Browsable($true)" />
         </Attributes>
-      </OutputSettingValues>
+      </Defaults>
     </TargetElement>
   </CodeGenerationMetaDataDefaults>
   <EntityModel>

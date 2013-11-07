@@ -1,8 +1,7 @@
-
 <%@ Page Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" Codebehind="Customers.aspx.cs"
     Inherits="AdapterWebApp.Customers" Title="Customers" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
+	<div>
         <h1>
             Customers</h1>
         <llblgenpro:llblgenprodatasource2 ID="CustomersDS" runat="server" 
