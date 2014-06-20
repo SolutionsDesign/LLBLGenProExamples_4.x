@@ -1,8 +1,8 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
-// Code is generated on: donderdag 7 november 2013 14:01:14
+// Code is generated using LLBLGen Pro version: 4.2
+// Code is generated on: vrijdag 20 juni 2014 13:28:26
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 //////////////////////////////////////////////////////////////
@@ -61,7 +61,7 @@ namespace SD.LLBLGen.Pro.Examples.WCF.DatabaseSpecific
 		/// <summary>Inits CategoryEntity's mappings</summary>
 		private void InitCategoryEntityMappings()
 		{
-			this.AddElementMapping("CategoryEntity", @"Northwind", @"dbo", "Categories", 4);
+			this.AddElementMapping("CategoryEntity", @"Northwind", @"dbo", "Categories", 4, 0);
 			this.AddElementFieldMapping("CategoryEntity", "CategoryId", "CategoryID", false, "Int", 0, 10, 0, true, "SCOPE_IDENTITY()", null, typeof(System.Int32), 0);
 			this.AddElementFieldMapping("CategoryEntity", "CategoryName", "CategoryName", false, "NVarChar", 15, 0, 0, false, "", null, typeof(System.String), 1);
 			this.AddElementFieldMapping("CategoryEntity", "Description", "Description", true, "NText", 1073741823, 0, 0, false, "", null, typeof(System.String), 2);
@@ -71,7 +71,7 @@ namespace SD.LLBLGen.Pro.Examples.WCF.DatabaseSpecific
 		/// <summary>Inits CustomerEntity's mappings</summary>
 		private void InitCustomerEntityMappings()
 		{
-			this.AddElementMapping("CustomerEntity", @"Northwind", @"dbo", "Customers", 11);
+			this.AddElementMapping("CustomerEntity", @"Northwind", @"dbo", "Customers", 11, 0);
 			this.AddElementFieldMapping("CustomerEntity", "Address", "Address", true, "NVarChar", 60, 0, 0, false, "", null, typeof(System.String), 0);
 			this.AddElementFieldMapping("CustomerEntity", "City", "City", true, "NVarChar", 15, 0, 0, false, "", null, typeof(System.String), 1);
 			this.AddElementFieldMapping("CustomerEntity", "CompanyName", "CompanyName", false, "NVarChar", 40, 0, 0, false, "", null, typeof(System.String), 2);
@@ -88,7 +88,7 @@ namespace SD.LLBLGen.Pro.Examples.WCF.DatabaseSpecific
 		/// <summary>Inits EmployeeEntity's mappings</summary>
 		private void InitEmployeeEntityMappings()
 		{
-			this.AddElementMapping("EmployeeEntity", @"Northwind", @"dbo", "Employees", 18);
+			this.AddElementMapping("EmployeeEntity", @"Northwind", @"dbo", "Employees", 18, 0);
 			this.AddElementFieldMapping("EmployeeEntity", "Address", "Address", true, "NVarChar", 60, 0, 0, false, "", null, typeof(System.String), 0);
 			this.AddElementFieldMapping("EmployeeEntity", "BirthDate", "BirthDate", true, "DateTime", 0, 0, 0, false, "", null, typeof(System.DateTime), 1);
 			this.AddElementFieldMapping("EmployeeEntity", "City", "City", true, "NVarChar", 15, 0, 0, false, "", null, typeof(System.String), 2);
@@ -112,7 +112,7 @@ namespace SD.LLBLGen.Pro.Examples.WCF.DatabaseSpecific
 		/// <summary>Inits OrderEntity's mappings</summary>
 		private void InitOrderEntityMappings()
 		{
-			this.AddElementMapping("OrderEntity", @"Northwind", @"dbo", "Orders", 14);
+			this.AddElementMapping("OrderEntity", @"Northwind", @"dbo", "Orders", 14, 0);
 			this.AddElementFieldMapping("OrderEntity", "CustomerId", "CustomerID", false, "NChar", 5, 0, 0, false, "", null, typeof(System.String), 0);
 			this.AddElementFieldMapping("OrderEntity", "EmployeeId", "EmployeeID", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 1);
 			this.AddElementFieldMapping("OrderEntity", "Freight", "Freight", true, "Money", 0, 19, 4, false, "", null, typeof(System.Decimal), 2);
@@ -132,7 +132,7 @@ namespace SD.LLBLGen.Pro.Examples.WCF.DatabaseSpecific
 		/// <summary>Inits OrderDetailsEntity's mappings</summary>
 		private void InitOrderDetailsEntityMappings()
 		{
-			this.AddElementMapping("OrderDetailsEntity", @"Northwind", @"dbo", "Order Details", 5);
+			this.AddElementMapping("OrderDetailsEntity", @"Northwind", @"dbo", "Order Details", 5, 0);
 			this.AddElementFieldMapping("OrderDetailsEntity", "Discount", "Discount", false, "Real", 0, 24, 0, false, "", null, typeof(System.Single), 0);
 			this.AddElementFieldMapping("OrderDetailsEntity", "OrderId", "OrderID", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 1);
 			this.AddElementFieldMapping("OrderDetailsEntity", "ProductId", "ProductID", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 2);
@@ -143,7 +143,7 @@ namespace SD.LLBLGen.Pro.Examples.WCF.DatabaseSpecific
 		/// <summary>Inits ProductEntity's mappings</summary>
 		private void InitProductEntityMappings()
 		{
-			this.AddElementMapping("ProductEntity", @"Northwind", @"dbo", "Products", 10);
+			this.AddElementMapping("ProductEntity", @"Northwind", @"dbo", "Products", 10, 0);
 			this.AddElementFieldMapping("ProductEntity", "CategoryId", "CategoryID", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 0);
 			this.AddElementFieldMapping("ProductEntity", "Discontinued", "Discontinued", false, "Bit", 0, 0, 0, false, "", null, typeof(System.Boolean), 1);
 			this.AddElementFieldMapping("ProductEntity", "ProductId", "ProductID", false, "Int", 0, 10, 0, true, "SCOPE_IDENTITY()", null, typeof(System.Int32), 2);

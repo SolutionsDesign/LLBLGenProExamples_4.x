@@ -1,8 +1,8 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
-// Code is generated on: donderdag 7 november 2013 13:08:58
+// Code is generated using LLBLGen Pro version: 4.2
+// Code is generated on: vrijdag 20 juni 2014 12:58:55
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 // Templates version: 
@@ -574,6 +574,14 @@ namespace SD.LLBLGen.Pro.Examples.Auditing.FactoryClasses
 		{
 			return new ResultsetFields(numberOfFields);
 		}
+		
+		/// <summary>Obtains the inheritance info provider instance from the singleton </summary>
+		/// <returns>The singleton instance of the inheritance info provider</returns>
+		public override IInheritanceInfoProvider ObtainInheritanceInfoProviderInstance()
+		{
+			return InheritanceInfoProviderSingleton.GetInstance();
+		}
+
 
 		/// <summary>Creates a new dynamic relation instance</summary>
 		/// <param name="leftOperand">The left operand.</param>
@@ -593,13 +601,19 @@ namespace SD.LLBLGen.Pro.Examples.Auditing.FactoryClasses
 		{
 			return new DynamicRelation(leftOperand, joinType, rightOperand, onClause);
 		}
-		
-		/// <summary>Obtains the inheritance info provider instance from the singleton </summary>
-		/// <returns>The singleton instance of the inheritance info provider</returns>
-		public override IInheritanceInfoProvider ObtainInheritanceInfoProviderInstance()
+
+		/// <summary>Creates a new dynamic relation instance</summary>
+		/// <param name="leftOperand">The left operand.</param>
+		/// <param name="joinType">Type of the join. If None is specified, Inner is assumed.</param>
+		/// <param name="rightOperand">The right operand.</param>
+		/// <param name="aliasLeftOperand">The alias of the left operand. If you don't want to / need to alias the right operand (only alias if you have to), specify string.Empty.</param>
+		/// <param name="onClause">The on clause for the join.</param>
+		/// <returns>ready to use dynamic relation</returns>
+		public override IDynamicRelation CreateDynamicRelation(IEntityFieldCore leftOperand, JoinHint joinType, DerivedTableDefinition rightOperand, string aliasLeftOperand, IPredicate onClause)
 		{
-			return InheritanceInfoProviderSingleton.GetInstance();
+			return new DynamicRelation(leftOperand, joinType, rightOperand, aliasLeftOperand, onClause);
 		}
+
 
 		/// <summary>Creates a new dynamic relation instance</summary>
 		/// <param name="leftOperand">The left operand.</param>
@@ -624,6 +638,19 @@ namespace SD.LLBLGen.Pro.Examples.Auditing.FactoryClasses
 		public override IDynamicRelation CreateDynamicRelation(string leftOperandEntityName, JoinHint joinType, string rightOperandEntityName, string aliasLeftOperand, string aliasRightOperand, IPredicate onClause)
 		{
 			return new DynamicRelation((SD.LLBLGen.Pro.Examples.Auditing.EntityType)Enum.Parse(typeof(SD.LLBLGen.Pro.Examples.Auditing.EntityType), leftOperandEntityName, false), joinType, (SD.LLBLGen.Pro.Examples.Auditing.EntityType)Enum.Parse(typeof(SD.LLBLGen.Pro.Examples.Auditing.EntityType), rightOperandEntityName, false), aliasLeftOperand, aliasRightOperand, onClause);
+		}
+		
+		/// <summary>Creates a new dynamic relation instance</summary>
+		/// <param name="leftOperand">The left operand.</param>
+		/// <param name="joinType">Type of the join. If None is specified, Inner is assumed.</param>
+		/// <param name="rightOperandEntityName">Name of the entity, which is used as the right operand.</param>
+		/// <param name="aliasLeftOperand">The alias of the left operand. If you don't want to / need to alias the right operand (only alias if you have to), specify string.Empty.</param>
+		/// <param name="aliasRightOperand">The alias of the right operand. If you don't want to / need to alias the right operand (only alias if you have to), specify string.Empty.</param>
+		/// <param name="onClause">The on clause for the join.</param>
+		/// <returns>ready to use dynamic relation</returns>
+		public override IDynamicRelation CreateDynamicRelation(IEntityFieldCore leftOperand, JoinHint joinType, string rightOperandEntityName, string aliasLeftOperand, string aliasRightOperand, IPredicate onClause)
+		{
+			return new DynamicRelation(leftOperand, joinType, (SD.LLBLGen.Pro.Examples.Auditing.EntityType)Enum.Parse(typeof(SD.LLBLGen.Pro.Examples.Auditing.EntityType), rightOperandEntityName, false), aliasLeftOperand, aliasRightOperand, onClause);
 		}
 		
 		/// <summary>Implementation of the routine which gets the factory of the Entity type with the SD.LLBLGen.Pro.Examples.Auditing.EntityType value passed in</summary>

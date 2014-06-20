@@ -1,14 +1,15 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
-// Code is generated on: donderdag 7 november 2013 13:14:09
+// Code is generated using LLBLGen Pro version: 4.2
+// Code is generated on: vrijdag 20 juni 2014 13:07:04
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 ////////////////////////////////////////////////////////////// 
 using System;
 using System.Linq;
 using SD.LLBLGen.Pro.Examples.Authorization.EntityClasses;
+using SD.LLBLGen.Pro.Examples.Authorization.HelperClasses;
 using SD.LLBLGen.Pro.ORMSupportClasses;
 using SD.LLBLGen.Pro.QuerySpec;
 

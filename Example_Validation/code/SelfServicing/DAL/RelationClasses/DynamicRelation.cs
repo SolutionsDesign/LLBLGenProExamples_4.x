@@ -1,8 +1,8 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
-// Code is generated on: donderdag 7 november 2013 13:36:40
+// Code is generated using LLBLGen Pro version: 4.2
+// Code is generated on: vrijdag 20 juni 2014 13:18:28
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 //////////////////////////////////////////////////////////////
@@ -37,7 +37,17 @@ namespace SD.LLBLGen.Pro.Examples.RelationClasses
 		{
 			this.InitClass(joinType, string.Empty, string.Empty, onClause, leftOperand, rightOperand);
 		}
-	
+
+		/// <summary>Initializes a new instance of the <see cref="DynamicRelation"/> class.</summary>
+		/// <param name="leftOperand">The left operand which is a field.</param>
+		/// <param name="joinType">Type of the join. If None is specified, Inner is assumed.</param>
+		/// <param name="rightOperand">The right operand which is a derived table.</param>
+		/// <param name="aliasLeftOperand">The alias of the left operand. If you don't want to / need to alias the left operand (only alias if you have to), specify string.Empty.</param>
+		/// <param name="onClause">The on clause for the join.</param>
+		public DynamicRelation(IEntityFieldCore leftOperand, JoinHint joinType, DerivedTableDefinition rightOperand, string aliasLeftOperand, IPredicate onClause)
+		{
+			this.InitClass(joinType, aliasLeftOperand, string.Empty, onClause, leftOperand, rightOperand);
+		}
 
 		/// <summary>Initializes a new instance of the <see cref="DynamicRelation"/> class.</summary>
 		/// <param name="leftOperand">The left operand.</param>
@@ -60,6 +70,18 @@ namespace SD.LLBLGen.Pro.Examples.RelationClasses
 		public DynamicRelation(SD.LLBLGen.Pro.Examples.EntityType leftOperand, JoinHint joinType, SD.LLBLGen.Pro.Examples.EntityType rightOperand, string aliasLeftOperand, string aliasRightOperand, IPredicate onClause)
 		{
 			this.InitClass(joinType, aliasLeftOperand, aliasRightOperand, onClause, GeneralEntityFactory.Create(leftOperand), GeneralEntityFactory.Create(rightOperand));
+		}
+		
+		/// <summary>Initializes a new instance of the <see cref="DynamicRelation"/> class.</summary>
+		/// <param name="leftOperand">The left operand which is a field.</param>
+		/// <param name="joinType">Type of the join. If None is specified, Inner is assumed.</param>
+		/// <param name="rightOperand">The right operand which is an entity.</param>
+		/// <param name="aliasLeftOperand">The alias of the left operand. If you don't want to / need to alias the left operand (only alias if you have to), specify string.Empty.</param>
+		/// <param name="aliasRightOperand">The alias of the right operand. If you don't want to / need to alias the right operand (only alias if you have to), specify string.Empty.</param>
+		/// <param name="onClause">The on clause for the join.</param>
+		public DynamicRelation(IEntityFieldCore leftOperand, JoinHint joinType, SD.LLBLGen.Pro.Examples.EntityType rightOperand, string aliasLeftOperand, string aliasRightOperand, IPredicate onClause)
+		{
+			this.InitClass(joinType, aliasLeftOperand, aliasRightOperand, onClause, leftOperand, GeneralEntityFactory.Create(rightOperand));
 		}
 
 		

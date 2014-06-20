@@ -1,12 +1,13 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
-// Code is generated on: donderdag 7 november 2013 13:08:58
+// Code is generated using LLBLGen Pro version: 4.2
+// Code is generated on: vrijdag 20 juni 2014 12:58:55
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 //////////////////////////////////////////////////////////////
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using SD.LLBLGen.Pro.LinqSupportClasses;
 using SD.LLBLGen.Pro.ORMSupportClasses;

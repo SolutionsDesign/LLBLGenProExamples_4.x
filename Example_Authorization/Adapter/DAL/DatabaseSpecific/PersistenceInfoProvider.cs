@@ -1,8 +1,8 @@
 ﻿///////////////////////////////////////////////////////////////
 // This is generated code. 
 //////////////////////////////////////////////////////////////
-// Code is generated using LLBLGen Pro version: 4.1
-// Code is generated on: donderdag 7 november 2013 13:14:10
+// Code is generated using LLBLGen Pro version: 4.2
+// Code is generated on: vrijdag 20 juni 2014 13:07:04
 // Code is generated using templates: SD.TemplateBindings.SharedTemplates
 // Templates vendor: Solutions Design.
 //////////////////////////////////////////////////////////////
@@ -59,7 +59,7 @@ namespace SD.LLBLGen.Pro.Examples.Authorization.DatabaseSpecific
 		/// <summary>Inits CustomersEntity's mappings</summary>
 		private void InitCustomersEntityMappings()
 		{
-			this.AddElementMapping("CustomersEntity", @"Northwind", @"dbo", "Customers", 11);
+			this.AddElementMapping("CustomersEntity", @"Northwind", @"dbo", "Customers", 11, 0);
 			this.AddElementFieldMapping("CustomersEntity", "Address", "Address", true, "NVarChar", 60, 0, 0, false, "", null, typeof(System.String), 0);
 			this.AddElementFieldMapping("CustomersEntity", "City", "City", true, "NVarChar", 15, 0, 0, false, "", null, typeof(System.String), 1);
 			this.AddElementFieldMapping("CustomersEntity", "CompanyName", "CompanyName", false, "NVarChar", 40, 0, 0, false, "", null, typeof(System.String), 2);
@@ -76,7 +76,7 @@ namespace SD.LLBLGen.Pro.Examples.Authorization.DatabaseSpecific
 		/// <summary>Inits EmployeesEntity's mappings</summary>
 		private void InitEmployeesEntityMappings()
 		{
-			this.AddElementMapping("EmployeesEntity", @"Northwind", @"dbo", "Employees", 18);
+			this.AddElementMapping("EmployeesEntity", @"Northwind", @"dbo", "Employees", 18, 0);
 			this.AddElementFieldMapping("EmployeesEntity", "Address", "Address", true, "NVarChar", 60, 0, 0, false, "", null, typeof(System.String), 0);
 			this.AddElementFieldMapping("EmployeesEntity", "BirthDate", "BirthDate", true, "DateTime", 0, 0, 0, false, "", null, typeof(System.DateTime), 1);
 			this.AddElementFieldMapping("EmployeesEntity", "City", "City", true, "NVarChar", 15, 0, 0, false, "", null, typeof(System.String), 2);
@@ -100,7 +100,7 @@ namespace SD.LLBLGen.Pro.Examples.Authorization.DatabaseSpecific
 		/// <summary>Inits GroupEntity's mappings</summary>
 		private void InitGroupEntityMappings()
 		{
-			this.AddElementMapping("GroupEntity", @"Northwind", @"dbo", "Group", 2);
+			this.AddElementMapping("GroupEntity", @"Northwind", @"dbo", "Group", 2, 0);
 			this.AddElementFieldMapping("GroupEntity", "Id", "Id", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 0);
 			this.AddElementFieldMapping("GroupEntity", "Name", "Name", true, "NVarChar", 50, 0, 0, false, "", null, typeof(System.String), 1);
 		}
@@ -108,7 +108,7 @@ namespace SD.LLBLGen.Pro.Examples.Authorization.DatabaseSpecific
 		/// <summary>Inits OrderDetailsEntity's mappings</summary>
 		private void InitOrderDetailsEntityMappings()
 		{
-			this.AddElementMapping("OrderDetailsEntity", @"Northwind", @"dbo", "Order Details", 5);
+			this.AddElementMapping("OrderDetailsEntity", @"Northwind", @"dbo", "Order Details", 5, 0);
 			this.AddElementFieldMapping("OrderDetailsEntity", "Discount", "Discount", false, "Real", 0, 24, 0, false, "", null, typeof(System.Single), 0);
 			this.AddElementFieldMapping("OrderDetailsEntity", "OrderId", "OrderID", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 1);
 			this.AddElementFieldMapping("OrderDetailsEntity", "ProductId", "ProductID", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 2);
@@ -119,7 +119,7 @@ namespace SD.LLBLGen.Pro.Examples.Authorization.DatabaseSpecific
 		/// <summary>Inits OrdersEntity's mappings</summary>
 		private void InitOrdersEntityMappings()
 		{
-			this.AddElementMapping("OrdersEntity", @"Northwind", @"dbo", "Orders", 14);
+			this.AddElementMapping("OrdersEntity", @"Northwind", @"dbo", "Orders", 14, 0);
 			this.AddElementFieldMapping("OrdersEntity", "CustomerId", "CustomerID", true, "NChar", 5, 0, 0, false, "", null, typeof(System.String), 0);
 			this.AddElementFieldMapping("OrdersEntity", "EmployeeId", "EmployeeID", true, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 1);
 			this.AddElementFieldMapping("OrdersEntity", "Freight", "Freight", true, "Money", 0, 19, 4, false, "", null, typeof(System.Decimal), 2);
@@ -139,7 +139,7 @@ namespace SD.LLBLGen.Pro.Examples.Authorization.DatabaseSpecific
 		/// <summary>Inits UserEntity's mappings</summary>
 		private void InitUserEntityMappings()
 		{
-			this.AddElementMapping("UserEntity", @"Northwind", @"dbo", "User", 3);
+			this.AddElementMapping("UserEntity", @"Northwind", @"dbo", "User", 3, 0);
 			this.AddElementFieldMapping("UserEntity", "FullName", "FullName", true, "VarChar", 150, 0, 0, false, "", null, typeof(System.String), 0);
 			this.AddElementFieldMapping("UserEntity", "Password", "Password", false, "VarChar", 15, 0, 0, false, "", null, typeof(System.String), 1);
 			this.AddElementFieldMapping("UserEntity", "UserId", "UserID", false, "VarChar", 15, 0, 0, false, "", null, typeof(System.String), 2);
@@ -148,7 +148,7 @@ namespace SD.LLBLGen.Pro.Examples.Authorization.DatabaseSpecific
 		/// <summary>Inits UserGroupEntity's mappings</summary>
 		private void InitUserGroupEntityMappings()
 		{
-			this.AddElementMapping("UserGroupEntity", @"Northwind", @"dbo", "UserGroup", 2);
+			this.AddElementMapping("UserGroupEntity", @"Northwind", @"dbo", "UserGroup", 2, 0);
 			this.AddElementFieldMapping("UserGroupEntity", "GroupId", "GroupId", false, "Int", 0, 10, 0, false, "", null, typeof(System.Int32), 0);
 			this.AddElementFieldMapping("UserGroupEntity", "UserId", "UserId", false, "VarChar", 15, 0, 0, false, "", null, typeof(System.String), 1);
 		}
